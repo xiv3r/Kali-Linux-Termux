@@ -1,5 +1,8 @@
 # Nethunter Termux Installations;
 
+Termux App: https://apkcombo.com/termux/com.termux/download/apk
+
+VNC kex: https://store.nethunter.com/repo/com.offsec.nethunter.kex_11407306.apk
 
 
 1) Open termux and type
