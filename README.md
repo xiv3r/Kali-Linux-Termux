@@ -50,8 +50,17 @@ choose #1 and enter...
 
 After installing;
 
-  type nh kex password ( to configure your vnc password )
-  type nh kex & ( to enable vnc service )
+   type
+     
+      nh kex password 
+      
+   ( to configure your vnc password )
+  
+   type 
+       
+      nh kex &
+      
+   ( to enable vnc service )
 
 
 Next is Open VNC and place kali as username and your vnc password 
