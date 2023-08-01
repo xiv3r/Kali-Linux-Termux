@@ -69,10 +69,10 @@ Next is Open VNC and place kali as username and your vnc password
 
 
 
-# Note
-to update and upgrade nethunter it's requires Changing resolv.conf
+# Note:
+To update and upgrade nethunter it is required changing /etc/resolv.conf
 
-    echo nameserver 8.8.8.8 >/etc/resolv.conf
+    sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
 
 
  
