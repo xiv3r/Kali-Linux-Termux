@@ -1,4 +1,4 @@
-# Nethunter Termux Installations;
+# Nethunter Termux ARM64 (not ARMHF) Installations;
 
 
   Termux App: https://apkcombo.com/termux/com.termux/download/apk
