@@ -54,13 +54,13 @@ you have the permission to run the installer
    ( to enable vnc service )
 
 
-# After, Open VNC and place kali as username and your vnc password 
+- Next Open the VNC and place kali as username and your vnc password 
 
 
-- Note:
-To update and upgrade nethunter it is requires to change /etc/resolv.conf
+# Note:
+To update and upgrade nethunter it is required to change /etc/resolv.conf
 
-    sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
+      sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
 
 
  
