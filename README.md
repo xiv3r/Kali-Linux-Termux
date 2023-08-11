@@ -28,7 +28,7 @@ The installer is now downloaded
 
 - Now execute
 
-       chmod +x install-nethunter-termux
+       chmod 777 install-nethunter-termux
 
 you have the permission to run the installer
 
