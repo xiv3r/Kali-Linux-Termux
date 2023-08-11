@@ -22,7 +22,7 @@
 
 - Download the Script
 
-       wget -O install-nethunter-termux https://github.com/xiv3r/Termux-Nethunter/blob/main/arm64
+       wget -O install-nethunter-termux http://github.com/xiv3r/Termux-Nethunter/blob/main/arm64
 
 The installer is now downloaded
 
