@@ -1,4 +1,4 @@
-# Nethunter Termux for ARM64 only (not ARMHF) 
+# Nethunter Termux
 
 - Download Apps:
 # [Termux App](https://apkcombo.com/termux/com.termux/download/apk)  
@@ -22,7 +22,7 @@
 
 - Download the Script
 
-       wget -O install-nethunter-termux https://offs.ec/2MceZWr
+       wget -O install-nethunter-termux https://github.com/xiv3r/Termux-Nethunter/blob/main/arm64
 
 The installer is now downloaded
 
