@@ -1,8 +1,8 @@
 # Nethunter Termux
 
 - Download Apps:
-# [Termux App](https://apkcombo.com/termux/com.termux/download/apk)  
-# [VNC kex App](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11407306.apk)
+# [Termux App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/Termux_v0.119.1.apk)
+# [VNC kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
 
 
 
