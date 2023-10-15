@@ -1,9 +1,12 @@
-# Nethunter Termux
+# <h1 align="center"> Nethunte Termux </h1>
+ 
+<p align="center">NetHunter in Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
-- Download Apps:
-# [Termux App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/Termux_v0.119.1.apk)
-# [VNC kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
-
+<br></br>
+# Download Apps:
+| [Termux App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/Termux_v0.119.1.apk) 
+| [VNC Kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
+|
 
 
 - Update termux
@@ -57,8 +60,8 @@ you have the permission to run the installer
 
 - Next Open the VNC and place kali as username and your vnc password 
 
+Note:
 
-# Note:
 To update and upgrade nethunter it is required to change /etc/resolv.conf
 
       sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
