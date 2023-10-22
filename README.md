@@ -12,38 +12,34 @@
 
 - Update termux
 
-       pkg update && pkg upgrade -y
+      pkg update && pkg upgrade -y
    
 - Enable storage access
 
-       termux-setup-storage
+      termux-setup-storage
 
 
 - Install wget
 
-       pkg install wget
+      pkg install wget
 
 
 - Download the Script
 
-       wget -O install-nethunter-termux https://offs.ec/2MceZWr
+      wget -O install-nethunter-termux https://offs.ec/2MceZWr
 
-  The installer is now downloaded
   
 - Now execute
 
-       chmod 777 install-nethunter-termux
+      chmod 777 install-nethunter-termux
 
-
-  You have the permission to run the installer
 
 - Install nethunter
 
-       ./install-nethunter-termux
+      ./install-nethunter-termux
 
 
-   Note: Only the Full nethunter image support vnc service, choose #1 and hit enter.
-
+  Note: Only the Full nethunter image support vnc service, choose #1 and hit enter.
 
 - After installing;
       
@@ -64,7 +60,7 @@
 
   or use
 
-       nano /etc/resov.conf
+      nano /etc/resov.conf
   and add
 
       nameserver 8.8.8.8
