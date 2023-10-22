@@ -70,9 +70,11 @@
       nameserver 8.8.8.8
       nameserver 1.1.1.1
      
- ### Prevent Termux VNC service from being Kill  " Process completed (signal 9) - press Enter "
+ ## Prevent Termux VNC service from being Killed. " Process completed (signal 9) - press Enter "
 
-- Using Wireless debugger [Video](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
+
+- Without PC Using Wireless debugger [VIDEO](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
+
 
 - Install adb in termux:
 
