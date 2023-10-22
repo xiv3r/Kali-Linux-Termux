@@ -76,7 +76,7 @@
 
       apt install android-tools -y
 
-- Install adb and fastboot in linux and [windows](https://www.androidpolice.com/install-adb-windows-mac-linux-guide/#:~:text=Perform%20a%20manual%20setup%20in%20Windows&text=Download%20the%20SDK%20platform%20tools%20for%20Windows%20from%20the%20Android%20Developers%20website.&text=Open%20a%20command%20window%20in,you%20can%20start%20using%20ADB.):
+- Install adb and fastboot in [linux and windows](https://developer.android.com/tools/adb#:~:text=To%20use%20adb%20with%20a,connect%20your%20device%20with%20USB.):
 
       apt install adb fastboot -y
 
