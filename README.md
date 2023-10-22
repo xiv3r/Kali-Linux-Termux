@@ -58,12 +58,19 @@
 - Next Open the VNC and place kali as username and your vnc password 
 
 
-  Note:To update and upgrade nethunter it is required to change /etc/resolv.conf
+  Note:To update and upgrade nethunter it is required to change nameserver from /etc/resolv.conf
 
       sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
 
+  or use
 
- ### Prevent Termux VNC service from being Kill [Process completed (signal 9) - press Enter]
+       nano /etc/resov.conf
+  and add
+
+      nameserver 8.8.8.8
+      nameserver 1.1.1.1
+     
+ ### Prevent Termux VNC service from being Kill  " Process completed (signal 9) - press Enter "
 
 - Using Wireless debugger [Video](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
 
@@ -75,6 +82,13 @@
 
       apt install adb fastboot -y
 
+  Note: Connect your mobile to the computer then enable [Developer Option](https://www.digitaltrends.com/mobile/how-to-get-developer-options-on-android/) and enable USB Debugging
+  
+- Now Execute
+
+      adb devices
+
+  Note:Popup and Pair your device  
 - Execute the below commands, These commands will disable the phantom process killer:
   
       adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent"
