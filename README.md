@@ -8,6 +8,7 @@
 | [VNC Kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
 |
 
+<br>
 
 - Update termux
 
@@ -27,44 +28,63 @@
 
        wget -O install-nethunter-termux https://offs.ec/2MceZWr
 
-The installer is now downloaded
-
-
+  The installer is now downloaded
+  
 - Now execute
 
        chmod 777 install-nethunter-termux
 
-you have the permission to run the installer
 
+  You have the permission to run the installer
 
 - Install nethunter
 
        ./install-nethunter-termux
 
 
-- Note: Only the Full nethunter image support vnc service, choose #1 and hit enter.
-
-
+   Note: Only the Full nethunter image support vnc service, choose #1 and hit enter.
 
 
 - After installing;
-     
-      nh kex password 
       
    ( to configure your vnc password )
-       
-      nh kex &
-      
+
+      nh kex password 
+             
    ( to enable vnc service )
 
+      nh kex &
 
 - Next Open the VNC and place kali as username and your vnc password 
 
-Note:
 
-To update and upgrade nethunter it is required to change /etc/resolv.conf
+  Note:To update and upgrade nethunter it is required to change /etc/resolv.conf
 
       sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
 
 
- 
+ ### Prevent Termux VNC service from being Kill [Process completed (signal 9) - press Enter]
+
+- Using Wireless debugger [Video](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
+
+- Install adb in termux:
+
+      apt install android-tools -y
+
+- Install adb and fastboot in linux and [windows](https://www.androidpolice.com/install-adb-windows-mac-linux-guide/#:~:text=Perform%20a%20manual%20setup%20in%20Windows&text=Download%20the%20SDK%20platform%20tools%20for%20Windows%20from%20the%20Android%20Developers%20website.&text=Open%20a%20command%20window%20in,you%20can%20start%20using%20ADB.):
+
+      apt install adb fastboot -y
+
+- Execute the below commands, These commands will disable the phantom process killer:
+  
+      adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent"
+
+      adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+      
+      adb shell settings put global settings_enable_monitor_phantom_procs false
+
+- To verify:
+
+      adb shell "/system/bin/dumpsys activity settings | grep max_phantom_processes"
+
+      adb shell "/system/bin/device_config get activity_manager max_phantom_processes"
