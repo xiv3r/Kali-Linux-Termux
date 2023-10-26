@@ -3,7 +3,10 @@
 <p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
 <br></br>
-# Download Apps:
+
+### [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
+
+### Download Apps:
 | [Termux App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/Termux_v0.119.1.apk) 
 | [VNC Kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
 |
@@ -39,7 +42,7 @@
       ./install-nethunter-termux
 
 
-  Note: Only the Full nethunter image support vnc service, choose #1 and hit enter.
+  Note: Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
 - After installing;
       
@@ -66,7 +69,8 @@
       nameserver 8.8.8.8
       nameserver 1.1.1.1
      
- ## Prevent Termux VNC service from being Killed. " Process completed (signal 9) - press Enter "
+ ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
+ <p align="center"> " Process completed (signal 9) - press Enter " </p>
 
 
 - Without PC Using Wireless debugger [VIDEO](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
