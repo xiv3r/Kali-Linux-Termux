@@ -93,14 +93,14 @@
   Note:Popup and Pair your device  
 - Execute the below commands, These commands will disable the phantom process killer:
   
-      adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent"
+      adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
 
-      adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+      adb shell /system/bin/device_config put activity_manager max_phantom_processes 2147483647
       
       adb shell settings put global settings_enable_monitor_phantom_procs false
 
 - To verify:
 
-      adb shell "/system/bin/dumpsys activity settings | grep max_phantom_processes"
+      adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
 
-      adb shell "/system/bin/device_config get activity_manager max_phantom_processes"
+      adb shell /system/bin/device_config get activity_manager max_phantom_processes
