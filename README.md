@@ -70,12 +70,11 @@
       nameserver 8.8.8.8
       nameserver 1.1.1.1
 
-
- - Automatically launch Nethunter (nh) command after opening the termux
+ - Automatically launch Nethunter NH command after opening the termux
 
        nano $PREFIX/etc/bash.bashrc
 
-  and add
+   and add
 
        nh
 
