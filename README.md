@@ -64,10 +64,21 @@
   or use
 
       nano /etc/resov.conf
+  
   and add
 
       nameserver 8.8.8.8
       nameserver 1.1.1.1
+
+
+ - Automatically launch Nethunter (nh) command after opening the termux
+
+       nano $PREFIX/etc/bash.bashrc
+
+  and add
+
+       nh
+
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
