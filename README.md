@@ -36,9 +36,9 @@
 
       chmod +x install-nethunter-termux
 
--Add to startup
+- Add to startup
 
-     echo "nh" >$PREFIX/etc/bash.bashrc
+      echo "nh" >$PREFIX/etc/bash.bashrc
 
 
 - Install nethunter
