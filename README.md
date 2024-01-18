@@ -15,17 +15,11 @@
 
 - Update termux
 
-      pkg update && pkg upgrade -y
+      pkg update ; pkg upgrade -y ; pkg install wget -y
    
 - Enable storage access
 
       termux-setup-storage
-
-
-- Install wget
-
-      pkg install wget
-
 
 - Download the Script
 
