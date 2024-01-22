@@ -6,12 +6,14 @@
 
 <br></br>
 
-### [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
-
-### Download Apps:
+<h1 align="center">
+  
+   [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
+   
 | [Termux App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/Termux_v0.119.1.apk) 
 | [VNC Kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
 |
+</h1>
 
 <br>
 
