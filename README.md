@@ -76,9 +76,10 @@
 
        nano $PREFIX/etc/bash.bashrc
 
-   and add
+   add
 
        nh
+       nh kex &
 
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
