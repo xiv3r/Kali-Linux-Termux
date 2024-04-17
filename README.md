@@ -36,7 +36,7 @@
 
 - Add to startup
 
-      echo "nh" >$PREFIX/etc/bash.bashrc
+      echo "clear ; nh" >$PREFIX/etc/bash.bashrc
 
 
 - Install nethunter
