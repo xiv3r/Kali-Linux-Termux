@@ -38,11 +38,11 @@
 - Next Open the VNC and place kali as username and your vnc password 
 
 
-  Note:To update and upgrade nethunter it is required to change nameserver from /etc/resolv.conf
+  Note:To update and upgrade nethunter. it is required to change nameserver from /etc/resolv.conf
 
       sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
 
-  or use
+  or used
 
       nano /etc/resov.conf
   
@@ -51,7 +51,11 @@
       nameserver 8.8.8.8
       nameserver 1.1.1.1
 
- - Automatically launch Nethunter NH command after opening the termux
+- Kali main sources.list
+
+      echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
+
+ - Autostart kali
 
        nano $PREFIX/etc/bash.bashrc
 
