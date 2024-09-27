@@ -1,6 +1,5 @@
 #!/bin/bash
 
-termux-setup-storage
 apt update ; apt upgrade -y ; apt install wget -y
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
 chmod +x install-nethunter-termux
