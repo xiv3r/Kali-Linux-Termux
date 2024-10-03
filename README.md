@@ -10,8 +10,8 @@
   
    [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
    
-| [Termux App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/Termux_v0.119.1.apk) 
-| [VNC Kex App](https://github.com/xiv3r/Termux-Nethunter/releases/download/Apps/offsec.nethunter.kex.apk)
+| [Termux App](https://github.com/termux/termux-app/releases/download/v0.119.0-beta.1/termux-app_v0.119.0-beta.1+apt-android-7-github-debug_universal.apk) 
+| [VNC Kex App](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 |
 </h1>
 
