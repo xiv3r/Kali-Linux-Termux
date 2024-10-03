@@ -40,30 +40,17 @@
 
   Note:To update and upgrade nethunter. it is required to change nameserver from /etc/resolv.conf
 
-      sudo echo nameserver 8.8.8.8 >/etc/resolv.conf
-
-  or used
-
-      nano /etc/resov.conf
-  
-  and add
-
-      nameserver 8.8.8.8
-      nameserver 1.1.1.1
+      sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+      sudo echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 
 - Kali main sources.list
 
-      echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
+      echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
- - Autostart kali
+ - Autostart kali with vnc
 
-       nano $PREFIX/etc/bash.bashrc
-
-   add
-
-       nh
-       nh kex &
-
+     echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
+   
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
