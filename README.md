@@ -48,8 +48,8 @@
       echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
 
  - Autostart kali with vnc
-
-     echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
+ 
+       echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
    
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
