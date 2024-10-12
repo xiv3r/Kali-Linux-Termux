@@ -19,9 +19,7 @@
 
 - Auto Install
 
-      termux-setup-storage
-      apt update ; apt install curl -y ; curl https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh
-      ./install-nethunter-termux
+      termux-setup-storage ; apt update ; apt install curl -y ; curl https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh ; ./install-nethunter-termux
 
  * Note: Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
