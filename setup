@@ -100,12 +100,10 @@ function set_strings() {
             wimg="full"
         fi
     fi
-    ####
 
-
-    CHROOT=kali-${SYS_ARCH}
-    IMAGE_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz
-    SHA_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz.sha512sum
+CHROOT=kali-${SYS_ARCH}
+IMAGE_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz
+SHA_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz.sha512sum
 }    
 
 function prepare_fs() {
