@@ -22,8 +22,8 @@
       termux-setup-storage ; apt update ; apt upgrade -y ; apt install curl -y ; curl https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh ; ./install-nethunter-termux
 
 - Auto Run on startup
-- Manual user: `nh`
-- Manual root: `nh -r`
+- Manual for user terminal: `nh`
+- Manual for root terminal: `nh -r`
 
  * Note: Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
@@ -39,11 +39,6 @@
 
 - Next Open the VNC and place kali as username and your vnc password 
 
-
-  Note:To update and upgrade nethunter. it is required to change nameserver from /etc/resolv.conf
-
-      sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-      sudo echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 
 - Kali main sources.list
 
@@ -82,7 +77,7 @@
       adb devices
 
   Note:Popup and Pair your device  
-- Execute the below commands, These commands will disable the phantom process killer:
+- Execute the commands below, These commands will disable the phantom process killer:
   
       adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
 
