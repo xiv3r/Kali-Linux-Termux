@@ -10,7 +10,7 @@
   
    [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
    
-| [Termux App](https://apkcombo.com/termux/com.termux/download/phone-0.119.1-apk) 
+| [Termux 0.119.1](https://apkcombo.com/termux/com.termux/download/phone-0.119.1-apk) 
 | [VNC Kex App](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 |
 </h1>
@@ -18,6 +18,7 @@
 <br>
 
 - Auto Install
+> stable on termux v.0.119.1
 
       termux-setup-storage && pkg update && pkg upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && ./install-nethunter-termux
 
