@@ -22,11 +22,14 @@
 
       termux-setup-storage && pkg update && pkg upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && ./install-nethunter-termux
 
-- Auto Run on startup
-- Manual for user terminal: `nh`
-- Manual for root terminal: `nh -r`
-
- * Note: Only the Full nethunter image support vnc service, choose 1 and hit enter.
+> [!Note]
+>> script include Auto Run Kali on every startup
+> 
+>> User terminal `nh`
+> 
+>> Root terminal `nh -r`
+> 
+>> Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
 - After installing;
       
