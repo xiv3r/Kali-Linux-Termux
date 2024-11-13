@@ -20,7 +20,7 @@
 - Auto Install
 > stable on termux v.0.119.1
 
-      termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && ./install-nethunter-termux
+      termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh
 
 > [!Note]
 >> script include Auto Run Kali on every startup
