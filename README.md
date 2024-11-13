@@ -10,7 +10,8 @@
   
    [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
    
-| [Termux 0.119.1]([https://apkcombo.com/termux/com.termux/download/phone-0.119.1-apk](https://objects.githubusercontent.com/github-production-release-asset-2e65be/672795302/c3bf54c6-4730-45f0-b9bd-310edb5d9558?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241113T072447Z&X-Amz-Expires=300&X-Amz-Signature=ba650d6fb12a1fe2dd109d954032720d5402b1d406de689aa6140325a423a2a9&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DTermux_v0.119.1.apk&response-content-type=application%2Fvnd.android.package-archive)) 
+| [Termux 0.119.1](https://objects.githubusercontent.com/github-production-release-asset-2e65be/672795302/c3bf54c6-4730-45f0-b9bd-310edb5d9558?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241113T072447Z&X-Amz-Expires=300&X-Amz-Signature=ba650d6fb12a1fe2dd109d954032720d5402b1d406de689aa6140325a423a2a9&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DTermux_v0.119.1.apk&response-content-type=application%2Fvnd.android.package-archive) 
+
 | [VNC Kex App](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 |
 </h1>
@@ -20,7 +21,7 @@
 - Auto Install
 > stable on termux v.0.119.1
 
-      termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && ./install-nethunter-termux
+      termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && sh install-nethunter-termux
 
 > [!Note]
 >> script include Auto Run Kali on every startup
