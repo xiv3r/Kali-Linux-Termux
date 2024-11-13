@@ -11,5 +11,5 @@ wget https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/i
 ###
 chmod +x install-nethunter-termux
 ###
-./install-nethunter-termux
+sh install-nethunter-termux
 
