@@ -1,13 +1,13 @@
 #!/bin/sh
 
 ###
-apt update && apt upgrade -y && apt install curl gnupg -y
+apt update && apt install curl gnupg -y
 ###
 echo "
 # deb https://deb.debian.org/debain stable main
 
 deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware
-" >> /etc/apt/sources.list
+" > /etc/apt/sources.list
 ###
 echo "Installing kali gpg keyring..."
 ###
