@@ -30,11 +30,11 @@ termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && w
 > - Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
 - After installing;
-( to configure your vnc password )
+> ( to configure your vnc password )
 ```sh
 nh kex password 
 ```        
-( to enable vnc service )
+> ( to enable vnc service )
 ```sh
 nh kex &
 ```
@@ -46,7 +46,7 @@ echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-fre
 ```
  - Autostart kali with vnc
 ```sh
-echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
+echo "clear && nh && nh kex &" >> $PREFIX/etc/bash.bashrc
 ```
 
 ## [ALTERNATIVE] Kali Linux on proot-distro (stable)
