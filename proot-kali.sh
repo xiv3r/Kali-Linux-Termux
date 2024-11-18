@@ -19,5 +19,5 @@ echo "
 deb [signed-by="/usr/share/keyrings/kali-archive-keyring.gpg"] https://kali.download/kali kali-rolling main contrib non-free non-free-firmware
 " > /etc/apt/sources.list
 ###
-apt update && apt upgrade -y
+apt update && apt full-upgrade -y
 
