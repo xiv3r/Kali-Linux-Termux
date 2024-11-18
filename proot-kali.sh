@@ -17,7 +17,7 @@ deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmw
 ###
 echo "Installing kali gpg keyring..."
 ###
-curl -fsSL https://archive.kali.org/archive-key.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kali-archive-keyring.gpg
+curl -fsSL https://archive.kali.org/archive-key.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/kali-archive-keyring.gpg
 ###
 echo "update and upgrading kali..."
 ###
