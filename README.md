@@ -49,9 +49,10 @@ echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-fre
 echo "clear && nh && nh kex &" >> $PREFIX/etc/bash.bashrc
 ```
 
-## [ALTERNATIVE] Kali Linux on proot-distro (stable)
+# [ALTERNATIVE] Kali Linux on proot-distro (stable)
 > - Clear all termux data before installing
 > - CLI only
+### Auto Install
 ```sh
 termux-setup-storage && apt update && apt upgrade -y && pkg install proot-distro wget -y && echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc && proot-distro install debian && proot-distro login debian
 ```
