@@ -1,13 +1,7 @@
 #!/bin/sh
 
 ###
-pkg install proot-distro -y
-###
-proot-distro install debian
-###
-proot-distro login debian
-###
-apt update && apt install curl gnupg -y
+apt update && apt upgrade && apt install curl gnupg -y
 ###
 echo "
 # deb https://deb.debian.org/debain stable main
