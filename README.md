@@ -50,7 +50,7 @@ echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
 ```
 ### [ALT] proot-kali
 ```sh
-apt update && apt upgrade -y && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/proot-kali.sh | sh
+termux-setup-storage && apt update && apt upgrade -y && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/proot-kali.sh | sh
 ```
 - Auto login on start-up
 ```sh
