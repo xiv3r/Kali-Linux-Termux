@@ -1,6 +1,8 @@
 #!/bin/sh
 
 ###
+echo "PS1='${debian_chroot:+($debian_chroot)}\u@kali:\w\$ '" >> /etc/bash.bashrc
+###
 apt update && apt install curl gnupg -y
 ###
 wget -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc https://archive.kali.org/archive-key.asc
