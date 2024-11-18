@@ -52,7 +52,15 @@
  - Autostart kali with vnc
  
        echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
-   
+
+### proot-kali
+```sh
+apt update && apt upgrade -y && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/proot-kali.sh | sh
+```
+- auto login in start-up
+```sh
+echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc
+```
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
