@@ -54,7 +54,7 @@ echo "clear && nh && nh kex &" >> $PREFIX/etc/bash.bashrc
 > - CLI only
 ### Auto Install
 ```sh
-termux-setup-storage && apt update && apt upgrade -y && pkg install proot-distro wget -y && echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc && proot-distro install debian && proot-distro login debian
+termux-setup-storage && apt update && apt upgrade -y && pkg install proot-distro wget -y && echo "clear && proot-distro login debian" >> $PREFIX/etc/bash.bashrc && proot-distro install debian && proot-distro login debian
 ```
 ```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/proot-kali.sh | sh
