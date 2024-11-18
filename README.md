@@ -49,9 +49,9 @@ echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-fre
 echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
 ```
 
-### [ALTERNATIVE] Kali Linux proot-distro (stable)
-> Clear all termux data before installing
-> CLI only
+## [ALTERNATIVE] Kali Linux on proot-distro (stable)
+> - Clear all termux data before installing
+> - CLI only
 ```sh
 termux-setup-storage && apt update && apt upgrade -y && pkg install proot-distro wget -y && echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc && proot-distro install debian && proot-distro login debian
 ```
@@ -61,6 +61,10 @@ wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/m
 - Auto login on start-up
 ```sh
 echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc
+```
+- Manual login
+```sh
+proot-distro login debian
 ```
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
