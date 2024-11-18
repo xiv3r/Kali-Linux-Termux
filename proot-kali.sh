@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ###
-echo PS1='${debian_chroot:+($debian_chroot)}\u@kali:\w\$ ' >> /etc/bash.bashrc
+echo "PS1='\${debian_chroot:+(\$debian_chroot)}\u@kali:\w\$ '" | tee -a /etc/bash.bashrc > /dev/null
 ###
 source /etc/bash.bashrc
 ###
