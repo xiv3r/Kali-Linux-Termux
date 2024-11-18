@@ -20,44 +20,39 @@
 
 - Auto Install
 > stable on termux v.0.119.1
-
-      termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && sh install-nethunter-termux
-
+```sh
+termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && sh install-nethunter-termux
+```
 > [!Note]
->> script include Auto Run Kali on every startup
-> 
->> User terminal `nh`
-> 
->> Root terminal `nh -r`
-> 
->> Only the Full nethunter image support vnc service, choose 1 and hit enter.
+> - script include Auto Run Kali on every startup
+> - User terminal `nh`
+> - Root terminal `nh -r`
+> - Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
 - After installing;
-      
-   ( to configure your vnc password )
-
-      nh kex password 
-             
-   ( to enable vnc service )
-
-      nh kex &
-
+( to configure your vnc password )
+```sh
+nh kex password 
+```        
+( to enable vnc service )
+```sh
+nh kex &
+```
 - Next Open the VNC and place kali as username and your vnc password 
 
-
 - Kali main sources.list
-
-      echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
-
+```sh
+echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
+```
  - Autostart kali with vnc
- 
-       echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
-
-### proot-kali
+```sh
+echo "clear ; nh ; nh kex &" >> $PREFIX/etc/bash.bashrc
+```
+### [ALT] proot-kali
 ```sh
 apt update && apt upgrade -y && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/proot-kali.sh | sh
 ```
-- auto login in start-up
+- Auto login on start-up
 ```sh
 echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc
 ```
@@ -65,41 +60,40 @@ echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
 
-
 - Without PC Using Wireless debugger [VIDEO](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
 
-
 - Install adb in termux:
-
-      apt install android-tools -y
-
+```sh
+apt install android-tools -y
+```
 - Install adb and fastboot in [linux and windows](https://developer.android.com/tools/adb#:~:text=To%20use%20adb%20with%20a,connect%20your%20device%20with%20USB.):
 
 - Auto Fixed
-
-      curl https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/adb.sh | sudo sh
-
+```sh
+curl https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/adb.sh | sudo sh
+```
 - Maual install 
-
-      apt install adb fastboot -y
-
-  Note: Connect your mobile to the computer then enable [Developer Option](https://www.digitaltrends.com/mobile/how-to-get-developer-options-on-android/) and enable USB Debugging
+```sh
+apt install adb fastboot -y
+```
+- Note: Connect your mobile to the computer then enable [Developer Option](https://www.digitaltrends.com/mobile/how-to-get-developer-options-on-android/) and enable USB Debugging
   
 - Now Execute
-
-      adb devices
-
-  Note:Popup and Pair your device  
+```sh
+adb devices
+```
+Note:Popup and Pair your device  
 - Execute the commands below, These commands will disable the phantom process killer:
-  
-      adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
+```sh
+adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
 
-      adb shell /system/bin/device_config put activity_manager max_phantom_processes 2147483647
-      
-      adb shell settings put global settings_enable_monitor_phantom_procs false
+adb shell /system/bin/device_config put activity_manager max_phantom_processes 2147483647
 
+adb shell settings put global settings_enable_monitor_phantom_procs false
+```
 - To verify:
+```sh
+adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
 
-      adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
-
-      adb shell /system/bin/device_config get activity_manager max_phantom_processes
+adb shell /system/bin/device_config get activity_manager max_phantom_processes
+```
