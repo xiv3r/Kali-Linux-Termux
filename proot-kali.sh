@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ###
-apt install proot-distro
+pkg install proot-distro -y
 ###
 proot-distro install debian
 ###
