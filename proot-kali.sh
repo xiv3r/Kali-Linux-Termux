@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ###
-echo "PS1='${debian_chroot:+($debian_chroot)}\u@kali:\w\$ '" >> /etc/bash.bashrc
+echo PS1='${debian_chroot:+($debian_chroot)}\u@kali:\w\$ ' >> /etc/bash.bashrc
 ###
 apt update && apt install curl gnupg -y
 ###
