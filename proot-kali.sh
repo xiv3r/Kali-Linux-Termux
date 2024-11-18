@@ -3,7 +3,7 @@
 ###
 apt update && apt install curl gnupg -y
 ###
-wget -O kali-archive-keyring.asc https://archive.kali.org/archive-key.asc
+wget -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc https://archive.kali.org/archive-key.asc
 ###
 curl -fsSL https://archive.kali.org/archive-key.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/kali-archive-keyring.gpg
 ###
