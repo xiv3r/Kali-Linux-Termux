@@ -69,6 +69,14 @@ echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc
 ```sh
 proot-distro login debian
 ```
+- Exit
+```
+exit
+```
+- Set custom terminal username
+```sh
+sed -i 's/user=kali/user=xiv3r/' /root/.bashrc && source /root/.bashrc
+```
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
