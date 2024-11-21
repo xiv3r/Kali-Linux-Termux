@@ -7,7 +7,9 @@
 <br></br>
 
 <h1 align="center">
-  
+
+   [(New stable) KALI in Proot-Distro](https://github.com/xiv3r/proot-distro-kali-nethunter)
+ 
    [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
    
 | [Termux 0.119.1](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/Termux_v0.119.1.apk)
