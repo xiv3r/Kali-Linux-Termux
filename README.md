@@ -75,7 +75,7 @@ exit
 ```
 - Set custom terminal username
 ```sh
-sed -i 's/user=kali/user=xiv3r/' /root/.bashrc && source /root/.bashrc
+sed -i 's/user=kali/user=xiv3r/' /etc/bash.bashrc && source /etc/bash.bashrc
 ```
      
  ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
