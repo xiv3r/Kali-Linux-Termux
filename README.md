@@ -8,7 +8,7 @@
 
 <h1 align="center">
 
-   [(New stable) KALI in Proot-Distro](https://github.com/xiv3r/proot-distro-kali-nethunter)
+   [(New stable) KALI in Proot-Distro](https://github.com/xiv3r/proot-distro-kali)
  
    [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
    
