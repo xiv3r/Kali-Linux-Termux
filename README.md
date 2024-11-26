@@ -60,6 +60,18 @@ apt update && apt upgrade -y && pkg install wget -y && echo "clear && proot-dist
 apt update && apt install -y wget && wget -O /etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/proot-distro-kali/refs/heads/main/files/bash.bashrc && source /etc/bash.bashrc
 ```
 
+- Auto login on start-up
+```sh
+echo "proot-distro login kali" >> $PREFIX/etc/bash.bashrc
+```
+- Manual login
+```sh
+proot-distro login kali
+```
+- Exit
+```
+exit
+```
 # Using Kali in Debian Proot-Distro (Stable) cli only
 > - Clear all termux data before installing
 > - CLI only
