@@ -20,7 +20,7 @@
 
 <br>
 
-- Auto Install
+# Auto Install
 > stable on termux v.0.119.1
 ```sh
 termux-setup-storage && apt update && apt upgrade -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | sh && sh install-nethunter-termux
@@ -51,10 +51,19 @@ echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-fre
 echo "clear && nh && nh kex &" >> $PREFIX/etc/bash.bashrc
 ```
 
-# [ALTERNATIVE] Kali Linux on proot-distro (stable)
+# Using Proot-Distro (Stable) cli only
+- Auto Install
+```sh
+apt update && apt upgrade -y && pkg install wget -y && echo "clear && proot-distro login kali" >> $PREFIX/etc/bash.bashrc && wget -qO- https://raw.githubusercontent.com/xiv3r/proot-distro-kali/refs/heads/main/files/setup.sh | sh && proot-distro login kali
+```
+```sh
+apt update && apt install -y wget && wget -O /etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/proot-distro-kali/refs/heads/main/files/bash.bashrc && source /etc/bash.bashrc
+```
+
+# Kali Linux on proot-distro (Stable) cli only
 > - Clear all termux data before installing
 > - CLI only
-### Auto Install
+- Auto Install
 ```sh
 termux-setup-storage && apt update && apt upgrade -y && pkg install proot-distro wget -y && echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc && proot-distro install debian && proot-distro login debian
 ```
@@ -78,7 +87,7 @@ exit
 sed -i 's/user=kali/user=xiv3r/' /etc/bash.bashrc && source /etc/bash.bashrc
 ```
      
- ### <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
+ <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
 
 - Without PC Using Wireless debugger [VIDEO](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
