@@ -51,7 +51,7 @@ echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-fre
 echo "clear && nh && nh kex &" >> $PREFIX/etc/bash.bashrc
 ```
 
-# Using Kali in Proot-Distro (Stable) cli only
+# Using Kali Proot-Distro (Stable) cli only
 - Auto Install
 ```sh
 apt update && apt upgrade -y && pkg install wget -y && echo "clear && proot-distro login kali" >> $PREFIX/etc/bash.bashrc && wget -qO- https://raw.githubusercontent.com/xiv3r/proot-distro-kali/refs/heads/main/files/setup.sh | sh && proot-distro login kali
