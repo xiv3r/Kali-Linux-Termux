@@ -1,7 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-apt install wget -y
-###
 echo "
 clear
 nh
