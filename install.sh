@@ -7,9 +7,7 @@ clear
 nh
 " >> $PREFIX/etc/bash.bashrc
 ###
-wget https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install-nethunter-termux
+wget -O install-nethunter-termux https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install-nethunter-termux
 ###
 chmod +x install-nethunter-termux
-###
-sh install-nethunter-termux
 
