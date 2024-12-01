@@ -46,7 +46,7 @@ nh kex password
 ```
 nh kex &
 ```
-## Next Open the VNC and place `kali` as username and your vnc `password`
+> - [Next Open the VNC and place `kali` as username and your vnc `password`](http://127.0.0.1:5901)
 
  <details><summary>
   
