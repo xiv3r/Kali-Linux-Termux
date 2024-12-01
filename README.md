@@ -28,12 +28,11 @@
 termux-setup-storage && apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | bash && ./install-nethunter-termux && nh -r
 ```
 > [!Note]
-> - script include Auto Run Kali on every startup
+> - script include Auto Run Kali and VNC in every startup
 > - User terminal `nh`
 > - Root terminal `nh -r`
-> - Only the Full nethunter image support vnc service, choose 1 and hit enter.
 
-- After installing;
+- After installing
 > ( to configure your vnc password )
 ```sh
 nh kex password 
@@ -48,66 +47,6 @@ nh kex &
 ```sh
 echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" > /etc/apt/sources.list
 ```
-
-<details><summary>
- 
- # Kali in Proot-Distro
- </summary>
- 
-- Auto Install
-```sh
-apt update && apt upgrade -y && pkg install wget -y && echo "clear && proot-distro login kali" >> $PREFIX/etc/bash.bashrc && wget -qO- https://raw.githubusercontent.com/xiv3r/proot-distro-kali/refs/heads/main/files/setup.sh | sh && proot-distro login kali
-```
-```sh
-apt update && apt install -y wget && wget -O /etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/proot-distro-kali/refs/heads/main/files/bash.bashrc && source /etc/bash.bashrc
-```
-
-- Auto login on start-up
-```sh
-echo "proot-distro login kali" >> $PREFIX/etc/bash.bashrc
-```
-- Manual login
-```sh
-proot-distro login kali
-```
-- Exit
-```
-exit
-```
-
-</details>
-
-<details><summary>
- 
- # Kali in Debian Proot-Distro
-</summary
- 
-> - Clear all termux data before installing
-> - CLI only
-- Auto Install
-```sh
-termux-setup-storage && apt update && apt upgrade -y && pkg install proot-distro wget -y && echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc && proot-distro install debian && proot-distro login debian
-```
-```sh
-wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/proot-kali.sh | sh
-```
-- Auto login on start-up
-```sh
-echo "proot-distro login debian" >> $PREFIX/etc/bash.bashrc
-```
-- Manual login
-```sh
-proot-distro login debian
-```
-- Exit
-```
-exit
-```
-- Set custom terminal username
-```sh
-sed -i 's/user=kali/user=xiv3r/' /etc/bash.bashrc && source /etc/bash.bashrc
-```
-</details>
 
  <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
  <p align="center"> " Process completed (signal 9) - press Enter " </p>
