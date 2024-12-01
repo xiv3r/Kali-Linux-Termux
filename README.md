@@ -25,7 +25,7 @@
 # Auto Install
 > stable on termux v.0.119.1
 ```sh
-termux-setup-storage && apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | bash && ./install-nethunter-termux && nh -r
+termux-setup-storage && apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y && echo "clear && nh & nh kex" >> $PREFIX/etc/bash.bashrc && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | bash && ./install-nethunter-termux && nh -r
 ```
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
@@ -42,7 +42,7 @@ nh kex password
 ```sh
 nh kex &
 ```
-- Next Open the VNC and place kali as username and your vnc password 
+## Next Open the VNC and place `kali` as username and your vnc `password`
 
  <details><summary>
   
