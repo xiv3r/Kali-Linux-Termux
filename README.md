@@ -10,9 +10,9 @@
 
 <h1 align="center">
 
-   [(New stable) KALI in Proot-Distro](https://github.com/xiv3r/proot-distro-kali)
+[(New stable) KALI in Proot-Distro](https://github.com/xiv3r/termux-proot-distro)
  
-   [Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
+[Termux GUI](https://wiki.termux.com/wiki/Graphical_Environment)
    
 | [Termux 0.119.1](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/Termux_v0.119.1.apk)
 |
@@ -29,10 +29,11 @@ termux-setup-storage && apt update && apt full-upgrade -o Dpkg::Options::="--for
 ```
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
+> - Only the Full nethunter image support vnc service, choose 1 and hit enter.
 > - User terminal `nh`
 > - Root terminal `nh -r`
 
-- After installing
+- After the Installation
 > ( to configure your vnc password )
 ```sh
 nh kex password 
@@ -43,13 +44,16 @@ nh kex &
 ```
 - Next Open the VNC and place kali as username and your vnc password 
 
-- Kali alternative sources.list
-```sh
-echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" > /etc/apt/sources.list
-```
+ <details><summary>
+  
+ <div align="center">
+  
+ # Prevent Termux VNC service from being Killed
+ </div>
+  
+ <p align="center">" Process completed (signal 9) - press Enter "</p>
 
- <h1 align="center">Prevent Termux VNC service from being Killed.</h1> 
- <p align="center"> " Process completed (signal 9) - press Enter " </p>
+ </summary>
 
 - Without PC Using Wireless debugger [VIDEO](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
 
@@ -88,3 +92,5 @@ adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
 
 adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
+
+</details>
