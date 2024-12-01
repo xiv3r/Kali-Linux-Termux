@@ -44,14 +44,11 @@ nh kex &
 ```
 - Next Open the VNC and place kali as username and your vnc password 
 
-- Kali main sources.list
+- Kali alternative sources.list
 ```sh
-echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
+echo "deb http://mirrors.ocf.berkeley.edu/kali kali-rolling main contrib non-free non-free-firmware" > /etc/apt/sources.list
 ```
- - Autostart kali with vnc
-```sh
-echo "clear && nh && nh kex &" >> $PREFIX/etc/bash.bashrc
-```
+
 <details><summary>
  
  # Kali in Proot-Distro
