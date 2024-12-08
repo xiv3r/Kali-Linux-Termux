@@ -48,8 +48,8 @@ echo "Set disable_coredump false" > chroot/kali-arm64/etc/sudo.conf
 ###
 echo "
 [*] Successful Installation!
-[*] Type:"kali kex passwd"
-[*] Type:"kali -r kex &" to run vnc
+[*] Type: kali vnc passwd
+[*] Type: kali -r vnc &
 "
 ###
 USRID=$(id -u)
