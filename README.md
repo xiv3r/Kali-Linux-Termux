@@ -25,7 +25,7 @@
 # Auto Install
 > stable on termux v.0.119.1
 ```sh
-apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y && echo "clear && nh" >> $PREFIX/etc/bash.bashrc && apt install wget bsdtar axel proot -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && kali -r
+apt update && apt install wget bsdtar axel proot -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && kali -r
 ```
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
@@ -34,9 +34,9 @@ apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Opt
 > - Root terminal `kali -r`
 
 - After the kali is installed
-> - launch vnc service in startup
+> - Auto login
 ```
-echo "kali vnc &" >>/etc/bash.bashrc
+echo "kali && kali vnc &" >>/etc/bash.bashrc
 ```
 > - ( to configure your vnc password )
 ```
