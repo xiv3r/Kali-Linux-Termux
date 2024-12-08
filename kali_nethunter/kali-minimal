@@ -8,13 +8,9 @@ echo "
 [*] Extracting rootfs...
 "
 ###
-proot --link2symlink bsdtar -xpJf kali-minimal.tar.xz 2> /dev/null
+proot --link2symlink bsdtar -xpJf kali-minimal.tar.xz 2>/dev/null
 ###
-echo "
-[*] Done!
-"
-###
-wget -O chroot/kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kex
+wget -O chroot/kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
 ###
 chmod 700 chroot/kali-arm64/bin/vnc
 ###
@@ -27,6 +23,7 @@ ln -s $PREFIX/bin/nethunter $PREFIX/bin/kali
 sed -i '/if/,/fi/d' chroot/kali-arm64/root/.bash_profile
 ###
 echo "nameserver 9.9.9.9" > chroot/kali-arm64/etc/resolv.conf
+###
 echo "nameserver 8.8.4.4" >> chroot/kali-arm64/etc/resolv.conf
 ###
 wget -O chroot/kali-arm64/root/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/rootbash.bashrc
@@ -43,6 +40,10 @@ echo "kali    ALL=(ALL:ALL) ALL" > chroot/kali-arm64/etc/sudoers.d/kali
 ###
 echo "Set disable_coredump false" > chroot/kali-arm64/etc/sudo.conf
 ###
+echo "
+(kali vnc) &
+kali
+" >>$PREFIX/etc/bash.bashrc
 ###
 echo "
 [*] Successful Installation!
@@ -55,5 +56,3 @@ USRID=$(id -u)
 GRPID=$(id -g)
 kali -r usermod -u "$USRID" kali 2>/dev/null
 kali -r groupmod -g "$GRPID" kali 2>/dev/null
-
-
