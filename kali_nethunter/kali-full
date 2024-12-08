@@ -32,11 +32,11 @@ echo "nameserver 9.9.9.9" > chroot/kali-arm64/etc/resolv.conf
 ###
 echo "nameserver 8.8.4.4" >> chroot/kali-arm64/etc/resolv.conf
 ###
-wget -O chroot/kali-arm64/root/.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/rootbash.bashrc
+wget -O chroot/kali-arm64/root/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/homebash.bashrc
 ###
-wget -O chroot/kali-arm64/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/homebash.bashrc
+wget -O chroot/kali-arm64/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/rootbash.bashrc
 ###
-wget -O chroot/kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/etcbash.bashrc
+wget -O chroot/kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/etcbash.bashrc
 ###
 chmod +s chroot/kali-arm64/usr/bin/sudo
 ###
