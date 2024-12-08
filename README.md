@@ -57,29 +57,11 @@ kali vnc &
 
  </summary>
 
-- Without PC Using Wireless debugger [VIDEO](https://www.youtube.com/watch?v=vK1Jx9ydi5c)
+## Download & Install
+-`Shizuku` and `Ashell` then enable wireless debugging through shizuku
+- permit ashell from shizuku
+- paste the adb commands below on ashell
 
-- Install adb in termux:
-```sh
-apt install android-tools -y
-```
-- Install adb and fastboot in [linux and windows](https://developer.android.com/tools/adb#:~:text=To%20use%20adb%20with%20a,connect%20your%20device%20with%20USB.):
-
-- Auto Fixed
-```sh
-curl https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/adb.sh | sudo sh
-```
-- Maual install 
-```sh
-apt install adb fastboot -y
-```
-- Note: Connect your mobile to the computer then enable [Developer Option](https://www.digitaltrends.com/mobile/how-to-get-developer-options-on-android/) and enable USB Debugging
-  
-- Now Execute
-```sh
-adb devices
-```
-Note:Popup and Pair your device  
 - Execute the commands below, These commands will disable the phantom process killer:
 ```sh
 adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
