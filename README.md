@@ -26,13 +26,13 @@ apt update && apt install wget bsdtar axel proot -y && wget -qO- https://raw.git
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
 > - Only the Full nethunter image support vnc service, choose 1 and hit enter.
-> - User terminal `kali`
-> - Root terminal `kali -r`
+> - Login User:`kali`
+> - Login Root:`kali -r`
 
 - After the kali is installed
 > - Auto login
 ```
-echo "kali && kali vnc &" >>/etc/bash.bashrc
+echo "kali vnc &" >>$PREFIX/etc/bash.bashrc
 ```
 > - ( to configure your vnc password )
 ```
