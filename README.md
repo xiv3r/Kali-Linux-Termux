@@ -39,6 +39,7 @@ echo "kali vnc &" >>$PREFIX/etc/bash.bashrc
 kali vnc password 
 ```        
 > - ( to enable vnc service )
+> 127.0.0.1:5901
 ```
 kali vnc &
 ```
