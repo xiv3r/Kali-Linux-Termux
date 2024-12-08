@@ -16,11 +16,11 @@ echo "
 [*] Done!
 "
 ###
-wget -O chroot/kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/kex
+wget -O chroot/kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kex
 ###
 chmod 700 chroot/kali-arm64/bin/vnc
 ###
-wget -O $PREFIX/bin/nethunter https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/nethunter
+wget -O $PREFIX/bin/nethunter https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/nethunter
 ###
 chmod 700 $PREFIX/bin/nethunter
 ###
