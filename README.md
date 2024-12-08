@@ -12,7 +12,7 @@
 
 | [Termux 0.119.1](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/Termux_v0.119.1.apk)
 |
-| [VNC Kex App](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
+| [RealVNC App](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
 |
 </h1>
 
