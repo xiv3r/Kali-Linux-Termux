@@ -21,7 +21,7 @@
 # Auto Install
 > stable on termux v.0.119.1
 ```sh
-apt update && apt install wget bsdtar axel proot -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && kali -r
+apt update && apt install wget bsdtar axel proot -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && kali
 ```
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
