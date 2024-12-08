@@ -1,0 +1,59 @@
+#!/data/data/com.termux/files/usr/bin/bash -e
+
+cd $HOME
+###
+axel -a -n 1 -o kali-minimal.tar.xz https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz
+###
+echo "
+[*] Extracting rootfs...
+"
+###
+proot --link2symlink bsdtar -xpJf kali-minimal.tar.xz 2> /dev/null
+###
+echo "
+[*] Done!
+"
+###
+wget -O chroot/kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/kex
+###
+chmod 700 chroot/kali-arm64/bin/vnc
+###
+wget -O $PREFIX/bin/nethunter https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/nethunter
+###
+chmod 700 $PREFIX/bin/nethunter
+###
+ln -s $PREFIX/bin/nethunter $PREFIX/bin/kali
+###
+sed -i '/if/,/fi/d' chroot/kali-arm64/root/.bash_profile
+###
+echo "nameserver 9.9.9.9" > chroot/kali-arm64/etc/resolv.conf
+echo "nameserver 8.8.4.4" >> chroot/kali-arm64/etc/resolv.conf
+###
+wget -O chroot/kali-arm64/root/.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/rootbash.bashrc
+#
+wget -O chroot/kali-arm64/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/homebash.bashrc
+#
+wget -O chroot/kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/etcbash.bashrc
+###
+chmod +s chroot/kali-arm64/usr/bin/sudo
+###
+chmod +s chroot/kali-arm64/usr/bin/su
+###
+echo "kali    ALL=(ALL:ALL) ALL" > chroot/kali-arm64/etc/sudoers.d/kali
+###
+echo "Set disable_coredump false" > chroot/kali-arm64/etc/sudo.conf
+###
+###
+echo "
+[*] Successful Installation!
+   To Login 👇
+user type: "kali"
+root type: "kali -r"
+"
+###
+USRID=$(id -u)
+GRPID=$(id -g)
+kali -r usermod -u "$USRID" kali 2>/dev/null
+kali -r groupmod -g "$GRPID" kali 2>/dev/null
+
+

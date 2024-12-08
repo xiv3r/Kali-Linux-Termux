@@ -1,0 +1,52 @@
+#!/data/data/com.termux/files/usr/bin/bash -e
+cd ${HOME}
+## termux-exec sets LD_PRELOAD so let's unset it before continuing
+unset LD_PRELOAD
+## Workaround for Libreoffice, also needs to bind a fake /proc/version
+if [ ! -f chroot/kali-arm64/root/.version ]; then
+    touch chroot/kali-arm64/root/.version
+fi
+
+## Default user is "kali"
+user="kali"
+home="/home/$user"
+start="sudo -u kali /bin/bash"
+
+## NH can be launched as root with the "-r" cmd attribute
+## Also check if user kali exists, if not start as root
+if grep -q "kali" chroot/kali-arm64/etc/passwd; then
+    KALIUSR="1";
+else
+    KALIUSR="0";
+fi
+if [[ $KALIUSR == "0" || ("$#" != "0" && ("$1" == "-r" || "$1" == "-R")) ]];then
+    user="root"
+    home="/$user"
+    start="/bin/bash --login"
+    if [[ "$#" != "0" && ("$1" == "-r" || "$1" == "-R") ]];then
+        shift
+    fi
+fi
+
+cmdline="proot \
+        --link2symlink \
+        -0 \
+        -r chroot/kali-arm64 \
+        -b /dev \
+        -b /proc \
+        -b /sdcard \
+        -b chroot/kali-arm64$home:/dev/shm \
+        -w $home \
+           /usr/bin/env -i \
+           HOME=$home \
+           PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
+           TERM=$TERM \
+           LANG=C.UTF-8 \
+           $start"
+
+cmd="$@"
+if [ "$#" == "0" ];then
+    exec $cmdline
+else
+    $cmdline -c "$cmd"
+fi
