@@ -16,8 +16,8 @@ function start-kex() {
 }
 
 function stop-kex() {
-    vncserver -kill :1 | sed s/"Xtigervnc"/"NetHunter KeX"/
-    vncserver -kill :2 | sed s/"Xtigervnc"/"NetHunter KeX"/
+    vncserver -kill :1 | sed s/"Xtigervnc"/"NetHunter VNC"/
+    vncserver -kill :2 | sed s/"Xtigervnc"/"NetHunter VNC"/
     return 0
 }
 
@@ -27,13 +27,13 @@ function passwd-kex() {
 }
 
 function status-kex() {
-    sessions=$(vncserver -list | sed s/"TigerVNC"/"NetHunter KeX"/)
+    sessions=$(vncserver -list | sed s/"TigerVNC"/"NetHunter VNC"/)
     if [[ $sessions == *"590"* ]]; then
         printf "\n${sessions}\n"
-        printf "\nYou can use the KeX client to connect to any of these displays.\n\n"
+        printf "\nYou can use the VNC client to connect to any of these displays.\n\n"
     else
         if [ ! -z $starting_kex ]; then
-            printf '\nError starting the KeX server.\nPlease try "nethunter kex kill" or restart your termux session and try again.\n\n'
+            printf '\nError starting the VNC server.\nPlease try "kali vnckill" or restart your termux session and try again.\n\n'
         fi
     fi
     return 0
