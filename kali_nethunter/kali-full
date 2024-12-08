@@ -48,7 +48,7 @@ kali
 echo "
 [*] Successful Installation!
 [*] Type: kali vnc passwd
-[*] Type: kali -r vnc &
+[*] Type: kali vnc &
 "
 ###
 USRID=$(id -u)
