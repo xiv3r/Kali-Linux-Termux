@@ -58,7 +58,7 @@ kali vnc &
  </summary>
 
 ## Download & Install
--`Shizuku` and `Ashell` then enable wireless debugging through shizuku
+- `Shizuku` and `Ashell` then enable wireless debugging through shizuku
 - permit ashell from shizuku
 - paste the adb commands below on ashell
 
