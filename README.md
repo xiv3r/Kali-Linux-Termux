@@ -25,26 +25,26 @@
 # Auto Install
 > stable on termux v.0.119.1
 ```sh
-termux-setup-storage && apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y && echo "clear && nh" >> $PREFIX/etc/bash.bashrc && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/install.sh | bash && ./install-nethunter-termux && nh -r
+apt update && apt full-upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y && echo "clear && nh" >> $PREFIX/etc/bash.bashrc && apt install wget bsdtar axel proot -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && kali -r
 ```
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
 > - Only the Full nethunter image support vnc service, choose 1 and hit enter.
-> - User terminal `nh`
-> - Root terminal `nh -r`
+> - User terminal `kali`
+> - Root terminal `kali -r`
 
 - After the kali is installed
 > - launch vnc service in startup
 ```
-echo "nh kex &" >>/etc/bash.bashrc
+echo "kali vnc &" >>/etc/bash.bashrc
 ```
 > - ( to configure your vnc password )
 ```
-nh kex password 
+kali vnc password 
 ```        
 > - ( to enable vnc service )
 ```
-nh kex &
+kali vnc &
 ```
 > - [Next Open the VNC and place `kali` as username and your vnc `password`](http://127.0.0.1:5901)
 
