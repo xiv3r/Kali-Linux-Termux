@@ -1,6 +1,6 @@
 <p align="center"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fxiv3r%2FKali-Linux-Termux&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%F0%9F%91%81%EF%B8%8F%F0%9F%91%81%EF%B8%8F&edge_flat=false">
 
-<img width="1100" height="500" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kali-vnc.png">
+<img width="1100" height="500" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vnc.png">
 
 # <h1 align="center"> Kali Nethunter Termux </h1>
  
@@ -42,6 +42,7 @@ kali vnc password
 ```
 kali vnc &
 ```
+
 > - [Next Open the VNC and place `kali` as username and your vnc `password`](http://127.0.0.1:5901)
 
  <details><summary>
@@ -94,3 +95,5 @@ adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
 
 </details>
+
+
