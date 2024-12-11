@@ -27,11 +27,6 @@ apt update && apt install wget bsdtar axel proot -y && wget -qO- https://raw.git
 > - Login User:`kali`
 > - Login Root:`kali -r`
 
-- After the kali is installed
-> - Auto login
-```
-echo "kali vnc &" >>$PREFIX/etc/bash.bashrc
-```
 > - ( to configure your vnc password )
 ```
 kali vnc password 
