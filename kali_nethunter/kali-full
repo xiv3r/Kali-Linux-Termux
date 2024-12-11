@@ -6,6 +6,7 @@ axel -a -n 1 -o kali-full.tar.xz https://kali.download/nethunter-images/current/
 ###
 echo "
 [*] Extracting rootfs...!!!
+[*] 20 minutes to extract please wait...!!!
 "
 ###
 proot --link2symlink bsdtar -xpJf kali-full.tar.xz 2>/dev/null
