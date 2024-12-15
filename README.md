@@ -20,7 +20,7 @@
 
 # Auto Install
 ```sh
-apt update && apt install wget bsdtar axel proot -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && kali
+apt update && apt install wget bsdtar axel proot -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && clear && kali
 ```
 > [!Note]
 > - script include Auto Run Kali and VNC in every startup
