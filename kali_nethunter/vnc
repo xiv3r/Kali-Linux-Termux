@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 function start-kex() {
     if [ ! -f ~/.vnc/passwd ]; then
         passwd-kex
