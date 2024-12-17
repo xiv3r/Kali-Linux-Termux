@@ -2,7 +2,7 @@
 
 cd $HOME
 ###
-axel -a -n 1 -o kali-full.tar.xz https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
+axel -a -- search -o kali-full.tar.xz https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
 ###
 echo "
 [*] Extracting rootfs...!!!
