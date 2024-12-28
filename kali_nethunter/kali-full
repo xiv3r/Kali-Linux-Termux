@@ -2,14 +2,20 @@
 
 cd $HOME
 ###
-axel -a -- search -o kali-full.tar.xz https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
+axel -a --search -o kali-full.tar.xz https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
 ###
-echo "
+cat << EOF
 [*] Extracting rootfs...!!!
 [*] 20 minutes to extract please wait...!!!
-"
+EOF
 ###
 proot --link2symlink bsdtar -xpJf kali-full.tar.xz 2>/dev/null
+###
+cat >>$PREFIX/etc/bash.bashrc << EOF
+clear
+(kali vnc) &
+kali
+EOF
 ###
 wget -O kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
 ###
@@ -41,18 +47,15 @@ echo "kali    ALL=(ALL:ALL) ALL" > kali-arm64/etc/sudoers.d/kali
 ###
 echo "Set disable_coredump false" > kali-arm64/etc/sudo.conf
 ###
-echo "
-(kali vnc) &
-kali
-" >>$PREFIX/etc/bash.bashrc
-###
-echo "
-[*] Successful Installation!
+cat << EOF
 [*] Type: kali vnc passwd
 [*] Type: kali vnc &
-"
+EOF
 ###
 USRID=$(id -u)
+###
 GRPID=$(id -g)
+###
 kali -r usermod -u "$USRID" kali 2>/dev/null
+###
 kali -r groupmod -g "$GRPID" kali 2>/dev/null
