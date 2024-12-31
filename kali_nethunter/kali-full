@@ -39,7 +39,7 @@ wget -O kali-arm64/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Kal
 ###
 wget -O kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/etcbash.bashrc
 ###
-echo "export PULSE_SERVER=127.0.0.1" >> $folder/etc/skel/.bashrc
+echo "export PULSE_SERVER=127.0.0.1" >> kali-arm64/etc/skel/.bashrc
 ###
 chmod +s kali-arm64/usr/bin/sudo
 ###
