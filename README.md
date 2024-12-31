@@ -11,7 +11,7 @@
 <h1 align="center">
 Download 
  
-| [Termux 0.119.1](https://play.google.com/store/apps/details?id=com.termux)
+| [Termux](https://play.google.com/store/apps/details?id=com.termux)
 |
 | [RealVNC App](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
 |
@@ -24,16 +24,15 @@ Download
 apt update && apt install wget bsdtar axel proot pulseaudio -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && clear && kali
 ```
 > [!Note]
-> - script include Auto Run Kali and VNC in every startup
-> - Login User:`kali`
-> - Login Root:`kali -r`
+> - Login for User:`kali`
+> - Login for Root:`kali -r`
 
 > - ( to configure your vnc password )
 ```
 kali vnc password 
 ```        
-> - ( to enable vnc service )
-> 127.0.0.1:5901
+> - ( to run vnc service )
+> - 127.0.0.1:5901
 ```
 kali vnc &
 ```
