@@ -21,7 +21,7 @@ Download
 
 # Auto Install
 ```sh
-apt update && apt install wget bsdtar axel proot pulseaudio -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && clear && kali
+apt update && apt install neofetch wget bsdtar axel proot pulseaudio -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && clear && kali
 ```
 > [!Note]
 > - Login for User:`kali`
