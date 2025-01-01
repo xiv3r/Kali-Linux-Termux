@@ -40,7 +40,11 @@ echo "nameserver 8.8.4.4" >> kali-arm64/etc/resolv.conf
 ###
 wget -O kali-arm64/root/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/rootbash.bashrc
 ###
+wget -O kali-arm64/root/.zshrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/root.zshrc
+###
 wget -O kali-arm64/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/homebash.bashrc
+###
+wget -O kali-arm64/home/kali/.zshrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.zshrc
 ###
 wget -O kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/etcbash.bashrc
 ###
