@@ -38,7 +38,11 @@ kali vnc &
 ```
 > - [Next Open the VNC and place `kali` as username and your vnc `password`](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
 
-## Set custom terminal name
+<details><summary>
+
+- Set custom terminal name
+</summary>
+
 > Change `xiv3r` to your name
 ```
 sed -i 's/user=kali/user=xiv3r/' /root/.bashrc
@@ -46,6 +50,8 @@ sed -i 's/user=kali/user=xiv3r/' /root/.zshrc
 sed -i 's/user=kali/user=xiv3r/' /home/kali/.bashrc
 sed -i 's/user=kali/user=xiv3r/' /home/kali/.zshrc
 ```
+</details>
+
  <details><summary>
   
  <div align="center">
@@ -78,5 +84,4 @@ adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
 
 </details>
-
 
