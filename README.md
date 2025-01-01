@@ -39,6 +39,7 @@ kali vnc &
 > - [Next Open the VNC and place `kali` as username and your vnc `password`](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
 
 ## Set custom terminal name
+> Change `xiv3r` to your name
 ```
 sed -i 's/user=kali/user=xiv3r/' /root/.bashrc
 sed -i 's/user=kali/user=xiv3r/' /root/.zshrc
