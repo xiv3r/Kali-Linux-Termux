@@ -32,6 +32,8 @@ ln -s $PREFIX/bin/nethunter $PREFIX/bin/kali
 ###
 sed -i '/if/,/fi/d' kali-arm64/root/.bash_profile
 ###
+echo "export PULSE_SERVER=127.0.0.1" >> kali-arm64/home/kali/.vnc/xstartup
+###
 echo "nameserver 9.9.9.9" > kali-arm64/etc/resolv.conf
 ###
 echo "nameserver 8.8.4.4" >> kali-arm64/etc/resolv.conf
