@@ -36,9 +36,15 @@ kali vnc password
 ```
 kali vnc &
 ```
+> - [Next Open the VNC and place `kali` as username and your vnc `password`](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
 
-> - [Next Open the VNC and place `kali` as username and your vnc `password`](http://127.0.0.1:5901)
-
+## Set custom terminal name
+```
+sed -i 's/user=kali/user=xiv3r/' /root/.bashrc
+sed -i 's/user=kali/user=xiv3r/' /root/.zshrc
+sed -i 's/user=kali/user=xiv3r/' /home/kali/.bashrc
+sed -i 's/user=kali/user=xiv3r/' /home/kali/.zshrc
+```
  <details><summary>
   
  <div align="center">
