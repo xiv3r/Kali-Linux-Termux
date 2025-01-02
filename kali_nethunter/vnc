@@ -34,7 +34,7 @@ function status-kex() {
         printf "\nYou can use the VNC client to connect to any of these displays.\n\n"
     else
         if [ ! -z $starting_kex ]; then
-            printf '\nError starting the VNC server.\nPlease try "kali vnckill" or restart your termux session and try again.\n\n'
+            printf '\nError starting the VNC server.\nPlease try "kali vnc kill" or restart your termux session and try again.\n\n'
         fi
     fi
     return 0
