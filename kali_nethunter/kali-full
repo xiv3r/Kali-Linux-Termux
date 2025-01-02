@@ -48,8 +48,6 @@ wget -O kali-arm64/home/kali/.zshrc https://raw.githubusercontent.com/xiv3r/Kali
 ###
 wget -O kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/etcbash.bashrc
 ###
-echo "export PULSE_SERVER=127.0.0.1" >> kali-arm64/home/kali/.vnc/xstartup
-###
 chmod +s kali-arm64/usr/bin/sudo
 ###
 chmod +s kali-arm64/usr/bin/su
