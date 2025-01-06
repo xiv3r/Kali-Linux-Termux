@@ -24,25 +24,25 @@ Download
 apt update && apt install neofetch wget bsdtar axel proot pulseaudio -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && clear && kali
 ```
 > [!Note]
+> - 2GB file 15GB raw file
 > - Login for User:`kali`
 > - Login for Root:`kali -r`
 
-> - ( to configure your vnc password )
+> - setup vnc password
 ```
 kali vnc password 
 ```        
-> - ( to run vnc service )
-> - 127.0.0.1:5901
+> - run vnc service `127.0.0.1:5901`
 ```
 kali vnc &
 ```
-> - [Next Open the VNC and place `kali` as username and your vnc `password`](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
+> Next Open the VNC and place `kali` as username and your vnc `password`
 
 <details><summary>
 
-- Set custom terminal name
 </summary>
 
+### Setup custom terminal name
 > Change `xiv3r` to your name
 ```
 sed -i 's/user=kali/user=xiv3r/' /root/.bashrc
@@ -53,20 +53,16 @@ sed -i 's/user=kali/user=xiv3r/' /home/kali/.zshrc
 </details>
 
  <details><summary>
-  
- <div align="center">
-  
- # Prevent Termux VNC service from being Killed
- </div>
-  
- <p align="center">" Process completed (signal 9) - press Enter "</p>
 
  </summary>
+  
+# Prevent Termux VNC service from being Killed
+> " Process completed (signal 9) - press Enter "
 
 ## Download & Install
-- `Shizuku` and `Ashell` then enable wireless debugging through shizuku
-- permit ashell from shizuku
-- paste the adb commands below on ashell
+- `Shizuku` and `Ashell` then enable wireless debugging through shizuku and pair from the notification
+- Permit ashell from shizuku
+- Paste the adb commands below on ashell
 
 - Execute the commands below, These commands will disable the phantom process killer:
 ```sh
