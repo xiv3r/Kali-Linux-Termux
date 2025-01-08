@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash -e
 
+apt install proot axel bsdtar neofetch pulseaudio -y
 cd $HOME
 ###
 neofetch --ascii_distro Kali -L
