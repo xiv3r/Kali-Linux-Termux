@@ -31,16 +31,16 @@ EOF
 
 # Download and configure scripts
 echo "[*] Downloading and configuring scripts..."
-wget -O "${DIR}/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/vnc"
+wget -O "${DIR}/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc"
 termux-fix-shebang "${DIR}/bin/vnc"
 chmod 700 "${DIR}/bin/vnc"
 
-wget -O "$PREFIX/bin/kali" "https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/kali"
+wget -O "$PREFIX/bin/kali" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali"
 termux-fix-shebang "$PREFIX/bin/kali"
 chmod 700 "$PREFIX/bin/kali"
 
 # Download configuration files
-wget -O "${DIR}/home/kali/.bashrc" "https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/home.bashrc"
+wget -O "${DIR}/home/kali/.bashrc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/home.bashrc"
 
 # Modify .bash_profile
 sed -i '/if/,/fi/d' "${DIR}/root/.bash_profile"
