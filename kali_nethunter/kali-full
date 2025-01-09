@@ -1,56 +1,93 @@
-#!/data/data/com.termux/files/usr/bin/bash -e
+#!/data/data/com.termux/files/usr/bin/bash
 
-apt install proot axel bsdtar neofetch pulseaudio -y
-cd $HOME
-###
-neofetch --ascii_distro Kali -L
-###
-axel -a --search -o kali-full.tar.xz https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
-###
-cat << EOF
-[*] Extracting rootfs...!!!
-[*] 20 minutes to extract please wait...!!!
-EOF
-###
-proot --link2symlink bsdtar -xpJf kali-full.tar.xz 2>/dev/null
-###
-cat >>$PREFIX/etc/bash.bashrc << EOF
+# Install required packages
+apt install proot bsdtar axel neofetch -y
 clear
-(kali vnc) &
-kali
+
+cd "$HOME"
+
+### Set variables
+TAR="kali_full.tar.xz"
+DIR="kali-arm64"
+NM="kali"
+
+# Display system info
+neofetch --ascii_distro Kali -L
+
+# Download Kali rootfs
+echo "[*] Downloading Kali Nethunter Rootfs..."
+axel -a -o "${TAR}" "https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz"
+
+# Extract rootfs
+echo "[*] Extracting ${TAR} Rootfs..."
+proot --link2symlink bsdtar -xpJf "${TAR}" 2>/dev/null
+
+# Update bash.bashrc
+cat >> "$PREFIX/etc/bash.bashrc" << EOF
+clear
+(${NM} vnc) &
+${NM}
 EOF
-###
-wget -O kali-arm64/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
-chmod 700 kali-arm64/bin/vnc
-wget -O $PREFIX/bin/nethunter https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/nethunter
-termux-fix-shebang $PREFIX/bin/nethunter
-chmod 700 $PREFIX/bin/nethunter
-###
-ln -s $PREFIX/bin/nethunter $PREFIX/bin/kali
-###
-sed -i '/if/,/fi/d' kali-arm64/root/.bash_profile
-###
-wget -O kali-arm64/root/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/rootbash.bashrc
-###
-wget -O kali-arm64/root/.zshrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/root.zshrc
-###
-wget -O kali-arm64/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/homebash.bashrc
-###
-wget -O kali-arm64/home/kali/.zshrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.zshrc
-###
-wget -O kali-arm64/etc/bash.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/etcbash.bashrc
-###
-chmod +s kali-arm64/usr/bin/sudo
-chmod +s kali-arm64/usr/bin/su
-echo "kali    ALL=(ALL:ALL) ALL" > kali-arm64/etc/sudoers.d/kali
-echo "Set disable_coredump false" > kali-arm64/etc/sudo.conf
-###
-cat << EOF
-[*] Type: kali vnc passwd
-[*] Type: kali vnc &
+
+# Download and configure scripts
+echo "[*] Downloading and configuring scripts..."
+wget -O "${DIR}/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/vnc"
+termux-fix-shebang "${DIR}/bin/vnc"
+chmod 700 "${DIR}/bin/vnc"
+
+wget -O "$PREFIX/bin/kali" "https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/kali"
+termux-fix-shebang "$PREFIX/bin/kali"
+chmod 700 "$PREFIX/bin/kali"
+
+# Download configuration files
+wget -O "${DIR}/home/kali/.bashrc" "https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/home.bashrc"
+
+# Modify .bash_profile
+sed -i '/if/,/fi/d' "${DIR}/root/.bash_profile"
+
+# Set SUID for sudo and su
+chmod +s "${DIR}/usr/bin/sudo"
+chmod +s "${DIR}/usr/bin/su"
+
+# Configure sudoers
+echo "[*] Configuring sudoers..."
+cat > "${DIR}/etc/sudoers.d/${NM}" << EOF
+${NM}    ALL=(ALL) NOPASSWD: ALL
 EOF
-###
+
+# Update bash.bashrc inside chroot
+cat >> "${DIR}/etc/bash.bashrc" << EOF
+neofetch
+EOF
+
+# Configure sudo.conf
+cat > "${DIR}/etc/sudo.conf" << EOF
+Set disable_coredump false
+EOF
+
+# Modify user and group IDs
 USRID=$(id -u)
 GRPID=$(id -g)
-kali -r usermod -u "$USRID" kali 2>/dev/null
-kali -r groupmod -g "$GRPID" kali 2>/dev/null
+${NM} usermod -u "$USRID" ${NM} 2>/dev/null
+${NM} groupmod -g "$GRPID" ${NM} 2>/dev/null
+
+# Start chroot environment
+echo "[*] Starting chroot environment..."
+bash "${NM}"
+
+# Update and install neofetch inside chroot
+echo "[*] Updating and installing neofetch inside chroot..."
+sudo apt update
+sudo apt install neofetch -y
+
+# Display success message
+cat << EOF
+[*] Successful Installation!
+To configure VNC password
+Type: kali vnc passwd
+Type: kali vnc &
+EOF
+
+# Delete tarball
+sleep 5s
+rm -f "${TAR}"
