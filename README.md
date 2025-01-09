@@ -1,11 +1,10 @@
 <p align="center"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fxiv3r%2FKali-Linux-Termux&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%F0%9F%91%81%EF%B8%8F%F0%9F%91%81%EF%B8%8F&edge_flat=false">
 
-<img width="1100" height="500" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vnc.jpg">
-
 # <h1 align="center"> Kali Nethunter Termux </h1>
  
 <p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
+<img width="1100" height="500" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vnc.jpg">
 <br></br>
 
 <h1 align="center">
@@ -21,18 +20,18 @@ Download
 
 # Auto Install
 ```sh
-apt update && apt install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | sh && clear && kali
+apt update && apt install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
 > [!Note]
 > - 2GB file 15GB raw file
 > - Login for User:`kali`
 > - Login for Root:`kali -r`
 
-> - setup vnc password
+> - Setup vnc password
 ```
-kali vnc password 
+kali vnc passwd
 ```        
-> - run vnc service `127.0.0.1:5901`
+> - Run vnc service `127.0.0.1:5901`
 ```
 kali vnc &
 ```
