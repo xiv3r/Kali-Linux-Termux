@@ -1,12 +1,14 @@
-#!/data/data/com.termux/files/usr/bin/bash -e
+#!/data/data/com.termux/files/usr/bin/bash
+
+cd ${HOME}
 
 pulseaudio --start \
     --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" \
     --exit-idle-time=-1
-###
-cd $HOME
+
 ## termux-exec sets LD_PRELOAD so let's unset it before continuing
 unset LD_PRELOAD
+
 ## Workaround for Libreoffice, also needs to bind a fake /proc/version
 if [ ! -f kali-arm64/root/.version ]; then
     touch kali-arm64/root/.version
