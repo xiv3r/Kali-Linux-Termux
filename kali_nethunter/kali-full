@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 # Install required packages
-apt install proot bsdtar axel neofetch -y
+apt install proot bsdtar axel -y
 clear
 
 cd ${HOME}
@@ -43,17 +43,17 @@ ${NM}
 EOF
 
 # Download and configure scripts
-wget -O ${DIR}/usr/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
+axel -o ${DIR}/usr/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
 termux-fix-shebang ${DIR}/usr/bin/vnc
 chmod 755 ${DIR}/usr/bin/vnc
 
 # Adding shortcut file
-wget -O $PREFIX/bin/${NM} https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali
+axel -o $PREFIX/bin/${NM} https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali
 termux-fix-shebang $PREFIX/bin/${NM}
 chmod 755 $PREFIX/bin/${NM}
 
 # Add neofetch
-wget -O ${DIR}/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
+axel -o ${DIR}/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
 chmod 755 ${DIR}/bin/neofetch
 
 # Add uninstallation config file
@@ -65,10 +65,10 @@ sed -i 's/(${NM} vnc) &//g' $PREFIX/etc/bash.bashrc
 sed -i 's/${NM}//g' $PREFIX/etc/bash.bashrc
 rm -rf $PREFIX/bin/${NM}-uninstall
 EOF
-chmod 700 $PREFIX/bin/${NM}-uninstall
+chmod 755 $PREFIX/bin/${NM}-uninstall
 
 # Download configuration files
-wget -O ${DIR}/home/${NM}/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.bashrc
+axel -o ${DIR}/home/${NM}/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.bashrc
 
 # Modify .bash_profile
 sed -i '/if/,/fi/d' ${DIR}/root/.bash_profile
