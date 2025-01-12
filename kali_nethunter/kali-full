@@ -22,7 +22,7 @@ cat << EOF
 Checking the integrity of ${TAR} file...
 EOF
 cat > $HOME/${TAR}_SHA256 << EOF
-${TAR}_SHA256= $(sha256sum ${TAR} | awk '{print $1}')
+${TAR}_SHA512=>$(sha512sum ${TAR} | awk '{print $1}')
 EOF
 cat $HOME/${TAR}_SHA256
 
