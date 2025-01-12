@@ -40,17 +40,17 @@ $NM
 EOF
 
 # Download and configure scripts
-axel -o $DIR/usr/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
+wget -O $DIR/usr/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
 termux-fix-shebang $DIR/usr/bin/vnc
 chmod 755 $DIR/usr/bin/vnc
 
 # Adding shortcut file
-axel -o $PREFIX/bin/$NM https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali
+wget -O $PREFIX/bin/$NM https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali
 termux-fix-shebang $PREFIX/bin/$NM
 chmod 755 $PREFIX/bin/$NM
 
 # Add neofetch
-axel -o $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
+wget -O $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
 chmod 755 $DIR/bin/neofetch
 
 # Add uninstallation config file
@@ -64,7 +64,7 @@ EOF
 chmod 755 $PREFIX/bin/$NM-uninstall
 
 # Download configuration files
-axel -o $DIR/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.bashrc
+wget -O $DIR/home/kali/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.bashrc
 
 # Modify .bash_profile
 sed -i '/if/,/fi/d' $DIR/root/.bash_profile
@@ -80,9 +80,9 @@ nameserver 8.8.8.8
 nameserver 1.1.1.1
 EOF
 
-# Fix sudoer
+# Fix sudoer file
 cat > $DIR/etc/sudoers.d/$NM << EOF
-kali    ALL=(ALL:ALL) ALL
+$NM    ALL=(ALL:ALL) ALL
 EOF
 
 # Update bash.bashrc inside chroot
@@ -107,8 +107,8 @@ rm $TAR
 # Display success message
 cat << EOF
 [*] Successful Installation...!
-
 [*] To Configure VNC password
+
 [*] Type: kali vnc passwd
 [*] Type: kali vnc &
 EOF
