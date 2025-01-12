@@ -81,8 +81,8 @@ nameserver 1.1.1.1
 EOF
 
 # Fix sudoer
-cat > ${DIR}/etc/sudoers.d/${FS}
-${FS}    ALL=(ALL:ALL) ALL
+cat > ${DIR}/etc/sudoers.d/${NM}
+${NM}    ALL=(ALL:ALL) ALL
 EOF
 
 # Update bash.bashrc inside chroot
