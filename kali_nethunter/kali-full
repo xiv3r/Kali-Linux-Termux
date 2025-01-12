@@ -86,7 +86,7 @@ nameserver 1.1.1.1
 EOF
 
 # Fix sudoer
-cat > ${DIR}/etc/sudoers.d/${NM}
+cat > ${DIR}/etc/sudoers.d/${NM} << EOF
 ${NM}    ALL=(ALL:ALL) ALL
 EOF
 
