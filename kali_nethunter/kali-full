@@ -113,12 +113,13 @@ bash ${NM} -r
 
 # Update and install neofetch
 sudo apt update
-sudo apt install neofetch -y
 
 # Display success message
 echo -e '\e[1;93m'
 cat << EOF
-[*] To configure VNC password
+[*] Successful Installation...!
+
+[*] To Configure VNC password
 [*] Type: kali vnc passwd
 [*] Type: kali vnc &
 EOF
