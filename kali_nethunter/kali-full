@@ -19,15 +19,17 @@ axel -a -o ${TAR} https://kali.download/nethunter-images/current/rootfs/${TAR}
 
 # Create a proot-distro configuration file
 cat << EOF
-Checking the integrity of ${TAR} file...
+Checking file integrity of ${TAR}...
 EOF
 cat > $HOME/${TAR}_SHA256 << EOF
 ${TAR}_SHA512=>$(sha512sum ${TAR} | awk '{print $1}')
 EOF
+echo " "
 cat $HOME/${TAR}_SHA256
 
 # Extract rootfs
-echo "[*] Decompressing 14GB of files takes 15 minutes"
+echo " "
+echo "[*] Decompressing 14GB of files takes 15 minutes..."
 sleep 1s
 echo "[*] Please wait..."
 sleep 1s
