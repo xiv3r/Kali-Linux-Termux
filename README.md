@@ -19,8 +19,8 @@ Download
 <br>
 
 # Auto Install
-```sh
-apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+```diff
+- ;apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
 > [!Note]
 > - Arm64 only
@@ -30,12 +30,12 @@ apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com
 > - Uninstall:`kali-uninstall`
 
 > - Setup VNC password
-```
-kali vnc passwd
+```diff
+- ;kali vnc passwd
 ```        
 > - Run VNC service `127.0.0.1:5901`
 ```
-kali vnc &
+- ;kali vnc &
 ```
 > Next Open the VNC and place `kali` as username and your vnc `password`
 
@@ -47,8 +47,8 @@ kali vnc &
 
 ### Setup custom terminal name
 > Replace `xiv3r` to your name
-```
-sed -i 's/user=kali/user=xiv3r/g' .bashrc
+```diff
+- ;sed -i 's/user=kali/user=xiv3r/g' .bashrc
 ```
 </details>
 
@@ -65,18 +65,18 @@ sed -i 's/user=kali/user=xiv3r/g' .bashrc
 - Paste the adb commands below on ashell
 
 - Execute the commands below, These commands will disable the phantom process killer:
-```sh
-adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
+```diff
+- ;adb shell /system/bin/device_config set_sync_disabled_for_tests persistent
 
-adb shell /system/bin/device_config put activity_manager max_phantom_processes 2147483647
+- ;adb shell /system/bin/device_config put activity_manager max_phantom_processes 2147483647
 
-adb shell settings put global settings_enable_monitor_phantom_procs false
+- ;adb shell settings put global settings_enable_monitor_phantom_procs false
 ```
 - To verify:
-```sh
-adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
+```diff
+- ;adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
 
-adb shell /system/bin/device_config get activity_manager max_phantom_processes
+- ;adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
 
 </details>
