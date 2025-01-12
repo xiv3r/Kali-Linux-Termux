@@ -1,13 +1,14 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash -e
 
 cd ${HOME}
 
+## termux-exec sets LD_PRELOAD so let's unset it before continuing
+unset LD_PRELOAD
+
+## pulseaudio 
 pulseaudio --start \
     --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" \
     --exit-idle-time=-1
-
-## termux-exec sets LD_PRELOAD so let's unset it before continuing
-unset LD_PRELOAD
 
 ## Workaround for Libreoffice, also needs to bind a fake /proc/version
 if [ ! -f kali-arm64/root/.version ]; then
@@ -15,6 +16,8 @@ if [ ! -f kali-arm64/root/.version ]; then
 fi
 
 ## Default user is "kali"
+user="kali"
+home="/home/$user"
 start="sudo -u kali /bin/bash"
 
 ## NH can be launched as root with the "-r" cmd attribute
@@ -36,14 +39,18 @@ fi
 cmdline="proot \
         --link2symlink \
         -0 \
-        -r kali-arm64 \
+        -L \
+        -k 6.11.2-1kali1 \
+        --ashmem-memfd \
         -b /dev \
         -b /proc \
+        -b /sys \
         -b /sdcard \
-        -b kali-arm64/home/kali:/dev/shm \
-        -w /home/kali \
+        -b kali-arm64$home:/dev/shm \
+        -w $home \
+        -r kali-arm64 \
            /usr/bin/env -i \
-           HOME=/home/kali \
+           HOME=$home \
            PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
            TERM=$TERM \
            LANG=C.UTF-8 \
