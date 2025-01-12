@@ -62,7 +62,7 @@ EOF
 chmod 700 $PREFIX/bin/${NM}-uninstall
 
 # Download configuration files
-wget -O ${DIR}/home/${NM}/.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/home.bashrc
+wget -O ${DIR}/home/${NM}/.bashrc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.bashrc
 
 # Modify .bash_profile
 sed -i '/if/,/fi/d' ${DIR}/root/.bash_profile
