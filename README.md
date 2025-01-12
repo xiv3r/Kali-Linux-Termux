@@ -39,7 +39,7 @@ kali vnc &
 ```
 > Next Open the VNC and place `kali` as username and your vnc `password`
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHK.jpg">
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHK.png">
 
 <details><summary>
 
