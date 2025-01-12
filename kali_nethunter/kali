@@ -42,13 +42,13 @@ cmdline="proot \
         -L \
         -k 6.11.2-1kali1 \
         --ashmem-memfd \
+        -r kali-arm64 \
         -b /dev \
         -b /proc \
         -b /sys \
         -b /sdcard \
         -b kali-arm64$home:/dev/shm \
         -w $home \
-        -r kali-arm64 \
            /usr/bin/env -i \
            HOME=$home \
            PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
