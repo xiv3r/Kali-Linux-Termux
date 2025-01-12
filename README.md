@@ -23,15 +23,17 @@ Download
 apt update && apt install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
 > [!Note]
-> - 2GB file 15GB raw file
+> - Arm64 only
+> - 2GB =>15GB raw file
 > - Login for User:`kali`
 > - Login for Root:`kali -r`
+> - Uninstall:`kali-uninstall`
 
-> - Setup vnc password
+> - Setup VNC password
 ```
 kali vnc passwd
 ```        
-> - Run vnc service `127.0.0.1:5901`
+> - Run VNC service `127.0.0.1:5901`
 ```
 kali vnc &
 ```
@@ -44,12 +46,9 @@ kali vnc &
 </summary>
 
 ### Setup custom terminal name
-> Change `xiv3r` to your name
+> Replace `xiv3r` to your name
 ```
-sed -i 's/user=kali/user=xiv3r/' /root/.bashrc
-sed -i 's/user=kali/user=xiv3r/' /root/.zshrc
-sed -i 's/user=kali/user=xiv3r/' /home/kali/.bashrc
-sed -i 's/user=kali/user=xiv3r/' /home/kali/.zshrc
+sed -i 's/user=kali/user=xiv3r/g' .bashrc
 ```
 </details>
 
