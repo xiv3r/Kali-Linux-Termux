@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 # Install required packages
-apt install proot bsdtar axel neofetch pulseaudio -y
+apt install proot bsdtar axel neofetch -y
 clear
 
 cd ${HOME}
@@ -80,6 +80,11 @@ nameserver 8.8.8.8
 nameserver 1.1.1.1
 EOF
 
+# Fix sudoer
+cat > ${DIR}/etc/sudoers.d/${FS}
+${FS}    ALL=(ALL:ALL) ALL
+EOF
+
 # Update bash.bashrc inside chroot
 cat >> ${DIR}/etc/bash.bashrc << EOF
 neofetch
@@ -109,9 +114,7 @@ sudo apt install neofetch -y
 # Display success message
 echo -e '\e[1;93m'
 cat << EOF
-[*] Successful Installation!
-
-To configure VNC password
-Type: kali vnc passwd
-Type: kali vnc &
+[*] To configure VNC password
+[*] Type: kali vnc passwd
+[*] Type: kali vnc &
 EOF
