@@ -44,7 +44,7 @@ cmdline="proot \
         -b /sdcard \
         -b kali-arm64:/dev/shm \
         -w /root \
-        -w /$home \
+        -w $home \
            /usr/bin/env -i \
            PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
            HOME=$home \
