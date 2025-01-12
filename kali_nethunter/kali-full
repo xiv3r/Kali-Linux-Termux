@@ -4,10 +4,10 @@
 apt install proot bsdtar axel neofetch -y
 clear
 
-cd "$HOME"
+cd ${HOME}
 
 ### Set variables
-TAR="kali_full.tar.xz"
+TAR="kali-nethunter-rootfs-full-arm64.tar.xz"
 DIR="kali-arm64"
 NM="kali"
 
@@ -15,79 +15,101 @@ NM="kali"
 neofetch --ascii_distro Kali -L
 
 # Download Kali rootfs
-echo "[*] Downloading Kali Nethunter Rootfs..."
-axel -a -o "${TAR}" "https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz"
+axel -a -o ${TAR} https://kali.download/nethunter-images/current/rootfs/${TAR}
+
+# Create a proot-distro configuration file
+cat << EOF
+Checking the integrity of ${TAR} file...
+EOF
+cat > $HOME/${TAR}_SHA256 << EOF
+${TAR}_SHA256= $(sha256sum ${TAR} | awk '{print $1}')
+EOF
+cat $HOME/${TAR}_SHA256
 
 # Extract rootfs
-echo "[*] Extracting ${TAR} Rootfs..."
-proot --link2symlink bsdtar -xpJf "${TAR}" 2>/dev/null
+echo "[*] Decompressing 14GB of files takes 15 minutes"
+sleep 1s
+echo "[*] Please wait..."
+sleep 1s
+echo "[*] Extracting ${TAR}..."
+proot --link2symlink bsdtar -xpJf ${TAR} 2>/dev/null
 
 # Update bash.bashrc
-cat >> "$PREFIX/etc/bash.bashrc" << EOF
-clear
+cat >> $PREFIX/etc/bash.bashrc << EOF
 (${NM} vnc) &
 ${NM}
 EOF
 
 # Download and configure scripts
-echo "[*] Downloading and configuring scripts..."
-wget -O "${DIR}/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc"
-termux-fix-shebang "${DIR}/bin/vnc"
-chmod 700 "${DIR}/bin/vnc"
+wget -O ${DIR}/usr/bin/vnc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/vnc
+termux-fix-shebang ${DIR}/usr/bin/vnc
+chmod 700 ${DIR}/usr/bin/vnc
 
-wget -O "$PREFIX/bin/kali" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali"
-termux-fix-shebang "$PREFIX/bin/kali"
-chmod 700 "$PREFIX/bin/kali"
+# Adding shortcut file
+wget -O $PREFIX/bin/${NM} https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/kali
+termux-fix-shebang $PREFIX/bin/${NM}
+chmod 700 $PREFIX/bin/${NM}
+
+# Add uninstallation config file
+cat > $PREFIX/bin/${NM}-uninstall << EOF
+rm -rf $HOME/${DIR}
+rm -rf $PREFIX/bin/${NM}
+rm -rf ${DIR}/bin/vnc
+sed -i 's/(${NM} vnc) &//g' $PREFIX/etc/bash.bashrc
+sed -i 's/${NM}//g' $PREFIX/etc/bash.bashrc
+rm -rf $PREFIX/bin/${NM}-uninstall
+EOF
+chmod 700 $PREFIX/bin/${NM}-uninstall
 
 # Download configuration files
-wget -O "${DIR}/home/kali/.bashrc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/rcfiles/home.bashrc"
+wget -O ${DIR}/home/${NM}/.bashrc https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/rcfiles/home.bashrc
 
 # Modify .bash_profile
-sed -i '/if/,/fi/d' "${DIR}/root/.bash_profile"
+sed -i '/if/,/fi/d' ${DIR}/root/.bash_profile
 
 # Set SUID for sudo and su
-chmod +s "${DIR}/usr/bin/sudo"
-chmod +s "${DIR}/usr/bin/su"
+chmod +s ${DIR}/usr/bin/sudo
+chmod +s ${DIR}/usr/bin/su
 
-# Configure sudoers
-echo "[*] Configuring sudoers..."
-cat > "${DIR}/etc/sudoers.d/${NM}" << EOF
-${NM}    ALL=(ALL) NOPASSWD: ALL
+# Fix DNS issue
+cat > ${DIR}/etc/resolv.conf << EOF
+nameserver 9.9.9.9
+nameserver 8.8.8.8
+nameserver 1.1.1.1
 EOF
 
 # Update bash.bashrc inside chroot
-cat >> "${DIR}/etc/bash.bashrc" << EOF
+cat >> ${DIR}/etc/bash.bashrc << EOF
 neofetch
 EOF
 
 # Configure sudo.conf
-cat > "${DIR}/etc/sudo.conf" << EOF
+cat > ${DIR}/etc/sudo.conf << EOF
 Set disable_coredump false
 EOF
 
 # Modify user and group IDs
 USRID=$(id -u)
 GRPID=$(id -g)
-${NM} usermod -u "$USRID" ${NM} 2>/dev/null
-${NM} groupmod -g "$GRPID" ${NM} 2>/dev/null
+${NM} -r usermod -u $USRID ${NM} 2>/dev/null
+${NM} -r groupmod -g $GRPID ${NM} 2>/dev/null
+
+# Delete tarball
+rm ${TAR}
 
 # Start chroot environment
-echo "[*] Starting chroot environment..."
-bash "${NM}"
+bash ${NM} -r
 
-# Update and install neofetch inside chroot
-echo "[*] Updating and installing neofetch inside chroot..."
+# Update and install neofetch
 sudo apt update
 sudo apt install neofetch -y
 
 # Display success message
+echo -e '\e[1;93m'
 cat << EOF
 [*] Successful Installation!
+
 To configure VNC password
 Type: kali vnc passwd
 Type: kali vnc &
 EOF
-
-# Delete tarball
-sleep 5s
-rm -f "${TAR}"
