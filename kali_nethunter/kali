@@ -35,18 +35,21 @@ cmdline="proot \
         --link2symlink \
         -0 \
         -L \
-        -k 6.11.2-1kali1 \
         --ashmem-memfd \
+        -k 6.11.2-1kali1 \
         -r kali-arm64 \
         -b /dev \
         -b /proc \
         -b /sys \
         -b /sdcard \
-        -b kali-arm64$home:/dev/shm \
-        -w $home \
+        -b kali-arm64:/dev/shm \
+        -w /root \
+        -w /$home \
            /usr/bin/env -i \
-           HOME=$home \
            PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
+           HOME=$home \
+           HOME=/root \
+           TMP=/tmp \
            TERM=$TERM \
            LANG=C.UTF-8 \
            $start"
