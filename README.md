@@ -34,7 +34,7 @@ Download
 - ;kali vnc passwd
 ```        
 > - Run VNC service `127.0.0.1:5901`
-```
+```diff
 - ;kali vnc &
 ```
 > Next Open the VNC and place `kali` as username and your vnc `password`
