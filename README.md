@@ -10,9 +10,9 @@
 <h1 align="center">
 Download 
  
-| [Termux](https://play.google.com/store/apps/details?id=com.termux)
+| [Termux](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/Termux_v0.119.1.apk)
 |
-| [RealVNC App](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
+| [VNC](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/offsec.nethunter.kex.apk)
 |
 </h1>
 
