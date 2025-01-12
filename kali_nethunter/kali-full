@@ -18,8 +18,9 @@ neofetch --ascii_distro Kali -L
 axel -a -o ${TAR} https://kali.download/nethunter-images/current/rootfs/${TAR}
 
 # Create a proot-distro configuration file
+echo " "
 cat << EOF
-Checking file integrity of ${TAR}...
+Checking ${TAR} file integrity...
 EOF
 cat > $HOME/${TAR}_SHA256 << EOF
 ${TAR}_SHA512=>$(sha512sum ${TAR} | awk '{print $1}')
@@ -30,9 +31,9 @@ cat $HOME/${TAR}_SHA256
 # Extract rootfs
 echo " "
 echo "[*] Decompressing 14GB of files takes 15 minutes..."
-sleep 1s
+echo " "
 echo "[*] Please wait..."
-sleep 1s
+echo " "
 echo "[*] Extracting ${TAR}..."
 proot --link2symlink bsdtar -xpJf ${TAR} 2>/dev/null
 
