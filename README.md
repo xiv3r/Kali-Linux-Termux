@@ -20,7 +20,7 @@ Download
 
 # Auto Install
 ```sh
-apt update && apt install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
 > [!Note]
 > - Arm64 only
@@ -39,7 +39,7 @@ kali vnc &
 ```
 > Next Open the VNC and place `kali` as username and your vnc `password`
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kali.jpg">
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHK.jpg">
 
 <details><summary>
 
