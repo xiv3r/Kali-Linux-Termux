@@ -20,7 +20,7 @@ Download
 
 # Auto Install
 ```diff
-- ;apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+-; apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
 > [!Note]
 > - Arm64 only
@@ -31,11 +31,11 @@ Download
 
 > - Setup VNC password
 ```diff
-- ;kali vnc passwd
+kali vnc passwd
 ```        
 > - Run VNC service `127.0.0.1:5901`
 ```diff
-- ;kali vnc &
+kali vnc &
 ```
 > Next Open the VNC and place `kali` as username and your vnc `password`
 
