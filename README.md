@@ -29,6 +29,7 @@ Download
 > - Login for Root:`kali -r`
 > - Uninstall:`kali-uninstall`
 
+### Type these command in the termux terminal
 > - Setup VNC password
 ```diff
 kali vnc passwd
