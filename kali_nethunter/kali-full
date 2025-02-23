@@ -124,6 +124,3 @@ cat << EOF
 [*] Type: kali vnc &
 EOF
 
-sleep 15s
-clear
-
