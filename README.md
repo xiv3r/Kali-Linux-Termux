@@ -41,17 +41,6 @@ kali vnc &
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHK.png">
 
-<details><summary>
-
-</summary>
-
-### Setup custom terminal name
-> Replace `xiv3r` to your name
-```diff
-- ;sed -i 's/user=kali/user=xiv3r/g' .bashrc
-```
-</details>
-
  <details><summary>
 
  </summary>
