@@ -19,7 +19,7 @@ axel -a -o $TAR https://kali.download/nethunter-images/current/rootfs/$TAR
 
 # Check file integrity
 echo " "
-echo "[*] Checking $TAR Linux File Integrity...!!!"
+echo "Checking $TAR Linux File Integrity...!!!"
 sleep 3s
 echo " "
 echo "[*] MD5"
@@ -39,7 +39,6 @@ echo " "
 echo "[*] Decompressing 14GB of files takes 15-20 minutes...!!!"
 sleep 3s
 echo "[*] Extracting $TAR...!!!"
-
 proot --link2symlink bsdtar -xpJf $TAR 2>/dev/null
 
 # Update bash.bashrc
@@ -87,8 +86,6 @@ chmod +s $DIR/usr/bin/su
 # Fix DNS issue
 cat > $DIR/etc/resolv.conf << EOF
 nameserver 9.9.9.10
-nameserver 8.8.8.8
-nameserver 1.1.1.1
 EOF
 
 # Fix sudoer file
