@@ -24,15 +24,12 @@ sleep 3s
 echo " "
 echo "[*] MD5"
 md5sum $TAR
-sleep 3s
 echo " "
 echo "[*] SHA256"
 sha256sum $TAR
-sleep 3s
 echo " "
 echo "[*] SHA512"
 sha512sum $TAR
-sleep 3s
 
 # Extract rootfs
 echo " "
