@@ -46,7 +46,7 @@ $NM
 EOF
 
 # Download and configure scripts
-wget -O $DIR/usr/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
+wget -O $DIR/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
 chmod 755 $DIR/usr/bin/vnc
 
 # Adding shortcut file
