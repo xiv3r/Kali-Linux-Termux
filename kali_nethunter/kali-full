@@ -19,7 +19,7 @@ axel -a -o $TAR https://kali.download/nethunter-images/current/rootfs/$TAR
 
 # Check file integrity
 echo " "
-echo "Checking $TAR Linux File Integrity...!!!"
+echo "Checking $TAR File Integrity!"
 sleep 3s
 echo " "
 echo "[*] MD5"
@@ -34,7 +34,7 @@ sha512sum $TAR
 # Extract rootfs
 echo " "
 echo "[*] Decompressing 14GB of files takes 15-20 minutes...!!!"
-sleep 3s
+echo " "
 echo "[*] Extracting $TAR...!!!"
 proot --link2symlink bsdtar -xvpJf $TAR
 
