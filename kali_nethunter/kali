@@ -1,68 +1,52 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash -e
+cd ${HOME}
+## termux-exec sets LD_PRELOAD so let's unset it before continuing
+unset LD_PRELOAD
+## Workaround for Libreoffice, also needs to bind a fake /proc/version
+if [ ! -f /root/.version ]; then
+    touch /root/.version
+fi
 
-function start-kex() {
-    if [ ! -f ~/.vnc/passwd ]; then
-        passwd-kex
+## Default user is "kali"
+user=""
+home="/home/$user"
+start="sudo -u kali /bin/bash"
+
+## NH can be launched as root with the "-r" cmd attribute
+## Also check if user kali exists, if not start as root
+if grep -q "kali" /etc/passwd; then
+    KALIUSR="1";
+else
+    KALIUSR="0";
+fi
+if [[ $KALIUSR == "0" || ("$#" != "0" && ("$1" == "-r" || "$1" == "-R")) ]];then
+    user="root"
+    home="/$user"
+    start="/bin/bash --login"
+    if [[ "$#" != "0" && ("$1" == "-r" || "$1" == "-R") ]];then
+        shift
     fi
-    USR=$(whoami)
-    if [ $USR == "root" ]; then
-        SCREEN=":2"
-    else
-        SCREEN=":1"
-    fi
-    export MOZ_FAKE_NO_SANDBOX=1; export HOME=${HOME}; export USER=${USR}; LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgcc_s.so.1 nohup vncserver $SCREEN >/dev/null 2>&1 </dev/null
-    starting_kex=1
-    return 0
-}
+fi
 
-function stop-kex() {
-    vncserver -kill :1 | sed s/"Xtigervnc"/"NetHunter KeX"/
-    vncserver -kill :2 | sed s/"Xtigervnc"/"NetHunter KeX"/
-    return 0
-}
+cmdline="proot \
+        --link2symlink \
+        -0 \
+        -r  \
+        -b /dev \
+        -b /proc \
+        -b /sdcard \
+        -b $home:/dev/shm \
+        -w $home \
+           /usr/bin/env -i \
+           HOME=$home \
+           PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
+           TERM=$TERM \
+           LANG=C.UTF-8 \
+           $start"
 
-function passwd-kex() {
-    vncpasswd
-    return 0
-}
-
-function status-kex() {
-    sessions=$(vncserver -list | sed s/"TigerVNC"/"NetHunter KeX"/)
-    if [[ $sessions == *"590"* ]]; then
-        printf "\n${sessions}\n"
-        printf "\nYou can use the KeX client to connect to any of these displays.\n\n"
-    else
-        if [ ! -z $starting_kex ]; then
-            printf '\nError starting the KeX server.\nPlease try "nethunter kex kill" or restart your termux session and try again.\n\n'
-        fi
-    fi
-    return 0
-}
-
-function kill-kex() {
-    pkill Xtigervnc
-    return $?
-}
-
-case $1 in
-    start)
-        start-kex
-        ;;
-    stop)
-        stop-kex
-        ;;
-    status)
-        status-kex
-        ;;
-    passwd)
-        passwd-kex
-        ;;
-    kill)
-        kill-kex
-        ;;
-    *)
-        stop-kex
-        start-kex
-        status-kex
-        ;;
-esac
+cmd="$@"
+if [ "$#" == "0" ];then
+    exec $cmdline
+else
+    $cmdline -c "$cmd"
+fi
