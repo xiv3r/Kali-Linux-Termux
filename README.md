@@ -49,7 +49,7 @@ kali vnc &
 > " Process completed (signal 9) - press Enter "
 
 ## Download & Install
-- Download `Shizuku` and `Ashell` then enable developer options wireless debugging mode through shizuku and pair the key from the notification
+- Download [Shizuku](https://github.com/RikkaApps/Shizuku/releases) and [Ashell](https://github.com/DP-Hridayan/aShellYou/releases) then enable developer options wireless debugging mode through shizuku and pair the key from the notification
 - Permit ashell from shizuku settings 
 - Paste the adb commands below on ashell
 
