@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function start-kex() {
     if [ ! -f ~/.vnc/passwd ]; then
         passwd-kex
@@ -17,8 +16,8 @@ function start-kex() {
 }
 
 function stop-kex() {
-    vncserver -kill :1 | sed s/"Xtigervnc"/"NetHunter VNC"/
-    vncserver -kill :2 | sed s/"Xtigervnc"/"NetHunter VNC"/
+    vncserver -kill :1 | sed s/"Xtigervnc"/"NetHunter KeX"/
+    vncserver -kill :2 | sed s/"Xtigervnc"/"NetHunter KeX"/
     return 0
 }
 
@@ -28,7 +27,7 @@ function passwd-kex() {
 }
 
 function status-kex() {
-    sessions=$(vncserver -list | sed s/"TigerVNC"/"NetHunter VNC"/)
+    sessions=$(vncserver -list | sed s/"TigerVNC"/"NetHunter KeX"/)
     if [[ $sessions == *"590"* ]]; then
         printf "\n${sessions}\n"
         printf "\nYou can use the VNC client to connect to any of these displays.\n\n"
