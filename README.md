@@ -22,6 +22,7 @@ Download
 > - 2GB =>15GB raw file
 > - Login for User:`kali`
 > - Login for Root:`kali -r`
+> - Logout:`exit`
 > - Uninstall:`kali-uninstall`
 # Auto Install
 ```diff
