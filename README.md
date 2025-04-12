@@ -17,37 +17,40 @@ Download
 
 <br>
 
-# Auto Install
-```diff
--; apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
-```
 > [!Note]
 > - Arm64 only
 > - 2GB =>15GB raw file
 > - Login for User:`kali`
 > - Login for Root:`kali -r`
 > - Uninstall:`kali-uninstall`
-
-### Type these command in the termux terminal
+# Auto Install
+```diff
+-; apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+```
+Type this command in the termux terminal
 > - Setup VNC password
 ```diff
 kali vnc passwd
 ```        
-> - Run VNC service `127.0.0.1:5902`
+> - Run VNC service `127.0.0.1:5901`
 ```diff
 kali vnc &
 ```
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
 
-> Next Open the VNC and add the address 127.0.0.1:5902 and type `kali` as username and your vnc `password`
+> Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
+<br>
+
+## Terminal
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
 
- <details><summary>
-
+<details><summary>
+ 
+## Disable phantom process killer
  </summary>
   
-# Prevent Termux VNC service from being Killed
+## Prevent Termux VNC service from being Killed
 > " Process completed (signal 9) - press Enter "
 
 ## Download & Install
