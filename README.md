@@ -3,7 +3,7 @@
  
 <p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHK.jpg">
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalivnc.jpg">
 <br></br>
 
 <h1 align="center">
@@ -39,7 +39,7 @@ kali vnc &
 ```
 > Next Open the VNC and add the address 127.0.0.1:5901 and type `kali` as username and your vnc `password`
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHK.png">
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
 
  <details><summary>
 
