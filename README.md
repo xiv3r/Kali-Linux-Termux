@@ -33,11 +33,13 @@ Download
 ```diff
 kali vnc passwd
 ```        
-> - Run VNC service `127.0.0.1:5901`
+> - Run VNC service `127.0.0.1:5902`
 ```diff
 kali vnc &
 ```
-> Next Open the VNC and add the address 127.0.0.1:5901 and type `kali` as username and your vnc `password`
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
+
+> Next Open the VNC and add the address 127.0.0.1:5902 and type `kali` as username and your vnc `password`
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
 
