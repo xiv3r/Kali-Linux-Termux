@@ -3,12 +3,12 @@ cd ${HOME}
 ## termux-exec sets LD_PRELOAD so let's unset it before continuing
 unset LD_PRELOAD
 ## Workaround for Libreoffice, also needs to bind a fake /proc/version
-if [ ! -f /root/.version ]; then
-    touch /root/.version
+if [ ! -f kali-arm64/root/.version ]; then
+    touch kali-arm64/root/.version
 fi
 
 ## Default user is "kali"
-user=""
+user="kali"
 home="/home/$user"
 start="sudo -u kali /bin/bash"
 
@@ -20,9 +20,9 @@ else
     KALIUSR="0";
 fi
 if [[ $KALIUSR == "0" || ("$#" != "0" && ("$1" == "-r" || "$1" == "-R")) ]];then
-    user="root"
-    home="/$user"
-    start="/bin/bash --login"
+user="root"
+home="/$user"
+start="/bin/bash --login"
     if [[ "$#" != "0" && ("$1" == "-r" || "$1" == "-R") ]];then
         shift
     fi
@@ -31,11 +31,11 @@ fi
 cmdline="proot \
         --link2symlink \
         -0 \
-        -r  \
+        -r kali-arm64 \
         -b /dev \
         -b /proc \
         -b /sdcard \
-        -b $home:/dev/shm \
+        -b kali-arm64/$home:/dev/shm \
         -w $home \
            /usr/bin/env -i \
            HOME=$home \
