@@ -14,15 +14,15 @@ start="sudo -u kali /bin/bash"
 
 ## NH can be launched as root with the "-r" cmd attribute
 ## Also check if user kali exists, if not start as root
-if grep -q "kali" /etc/passwd; then
+if grep -q "kali" kali-arm64/etc/passwd; then
     KALIUSR="1";
 else
     KALIUSR="0";
 fi
 if [[ $KALIUSR == "0" || ("$#" != "0" && ("$1" == "-r" || "$1" == "-R")) ]];then
-user="root"
-home="/$user"
-start="/bin/bash --login"
+    user="root"
+    home="/$user"
+    start="/bin/bash --login"
     if [[ "$#" != "0" && ("$1" == "-r" || "$1" == "-R") ]];then
         shift
     fi
@@ -35,7 +35,7 @@ cmdline="proot \
         -b /dev \
         -b /proc \
         -b /sdcard \
-        -b kali-arm64/$home:/dev/shm \
+        -b kali-arm64$home:/dev/shm \
         -w $home \
            /usr/bin/env -i \
            HOME=$home \
