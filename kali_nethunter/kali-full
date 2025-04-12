@@ -7,7 +7,7 @@ clear
 cd $HOME
 
 ### Set variables
-TAR=kali-nethunter-daily-dev-rootfs-full-arm64.tar.xz
+TAR=kali-rootfs-full-arm64.tar.xz
 DIR=kali-arm64
 NM=kali
 
@@ -15,7 +15,7 @@ NM=kali
 neofetch --ascii_distro Kali -L
 
 # Download Kali rootfs
-axel -a -o $TAR https://image-nethunter.kali.org/nethunter-fs/kali-daily/$TAR
+axel -o $TAR https://image-nethunter.kali.org/nethunter-fs/kali-daily/kali-nethunter-daily-dev-rootfs-full-arm64.tar.xz
 
 # Check file integrity
 echo " "
