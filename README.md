@@ -32,14 +32,24 @@ kali vnc &
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
-# Logins
-Login for User:`kali`
+## Login for User
+```
+kali
+```
+## Login for Root
+```
+kali -r
+```
+## Logout
+```
+exit
+```
+## Uninstall
+```
+kali-uninstall
+```
 
-Login for Root:`kali -r`
-
-Logout:`exit`
-
-Uninstall:`kali-uninstall`
+<br><br>
 
 ## Terminal
 
@@ -50,6 +60,7 @@ Uninstall:`kali-uninstall`
  
 # Disable phantom process killer
  </summary>
+ 
 > " Process completed (signal 9) - press Enter "
 
 ## Download & Install
