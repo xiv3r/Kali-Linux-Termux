@@ -26,19 +26,26 @@ kali vnc passwd
 ```diff
 kali vnc &
 ```
+<details><summary></summary>
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
+</details>
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
 # Logins
-- Login for User:`kali`
-- Login for Root:`kali -r`
-- Logout:`exit`
-- Uninstall:`kali-uninstall`
-<br><br>
+Login for User:`kali`
+
+Login for Root:`kali -r`
+
+Logout:`exit`
+
+Uninstall:`kali-uninstall`
 
 ## Terminal
+
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
+
+
 <details><summary>
  
 # Disable phantom process killer
