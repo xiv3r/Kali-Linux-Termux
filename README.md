@@ -58,8 +58,8 @@ kali-uninstall
 
 
 <details><summary>
- 
-# Disable phantom process killer
+
+## $${\color{red}Disable- phantom- process- killer}$$
  </summary>
  
 > " Process completed (signal 9) - press Enter "
