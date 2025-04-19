@@ -1,5 +1,5 @@
 
-# <h1 align="center"> Kali Nethunter Termux </h1>
+# <h1 align="center"> $${\color{red}Kali- Nethunter- Termux}$$ </h1>
  
 <p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
@@ -7,17 +7,18 @@
 
 <br>
 
-# Requirements
+# $${\color{red}Requirements}$$
 - Arm64
 - 15GB Storage spaces
 - [Termux](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/Termux_v0.119.1.apk)
 - [VNC](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/offsec.nethunter.kex.apk)
 
-# Auto Install
-```diff
--; apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+# $${\color{red}Auto- Install}$$
 ```
-After the installation type the following commands in termux terminal
+apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+```
+> After the installation type the following commands in termux terminal
+
 > - Setup VNC password
 ```diff
 kali vnc passwd
@@ -32,26 +33,26 @@ kali vnc &
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
-## Login for User
+## $${\color{red}Login- User}$$
 ```
 kali
 ```
-## Login for Root
+## $${\color{red}Login- Root}$$
 ```
 kali -r
 ```
-## Logout
+## $${\color{red}Logout}$$
 ```
 exit
 ```
-## Uninstall
+## $${\color{red}Uninstall}$$
 ```
 kali-uninstall
 ```
 
 <br><br>
 
-## Terminal
+## $${\color{red}Terminal}$$
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
 
