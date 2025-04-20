@@ -11,7 +11,7 @@
 - Arm64
 - 15GB Storage spaces
 - [Termux](https://github.com/termux/termux-app/releases/download/v0.118.2/termux-app_v0.118.2+github-debug_arm64-v8a.apk)
-- [VNC](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/offsec.nethunter.kex.apk)
+- [VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 
 # $${\color{red}Auto- Install}$$
 ```
