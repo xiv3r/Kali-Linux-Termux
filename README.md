@@ -10,7 +10,7 @@
 # $${\color{red}Requirements}$$
 - Arm64
 - 15GB Storage spaces
-- [Termux](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/Termux_v0.119.1.apk)
+- [Termux](https://github.com/termux/termux-app/releases/download/v0.118.2/termux-app_v0.118.2+github-debug_arm64-v8a.apk)
 - [VNC](https://github.com/xiv3r/Kali-Linux-Termux/releases/download/Apps/offsec.nethunter.kex.apk)
 
 # $${\color{red}Auto- Install}$$
