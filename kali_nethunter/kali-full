@@ -15,7 +15,7 @@ NM=kali
 neofetch --ascii_distro Kali -L
 
 # Download Kali rootfs
-axel -o $TAR https://image-nethunter.kali.org/nethunter-fs/kali-daily/kali-nethunter-daily-dev-rootfs-full-arm64.tar.xz
+axel -o $TAR https://image-nethunter.kali.org/nethunter-fs/kali-weekly/kali-nethunter-2025.W18-rolling-rootfs-full-arm64.tar.xz
 
 # Check file integrity
 echo " "
