@@ -15,7 +15,7 @@
 
 # $${\color{red}Auto- Install}$$
 ```
-apt update && apt install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+pkg update && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
 > - After the installation type the following commands in termux terminal
 
