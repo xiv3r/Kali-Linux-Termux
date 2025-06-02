@@ -1,5 +1,5 @@
 
-# <h1 align="center"> $${\color{red}Kali- Nethunter- Termux}$$ </h1>
+# <h1 align="center">Kali Nethunter Termux</h1>
  
 <p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
@@ -7,13 +7,13 @@
 
 <br>
 
-# $${\color{red}Requirements}$$
+# Requirements
 - Arm64
 - 15GB Storage spaces
 - [Termux](https://github.com/termux/termux-app/releases/download/v0.118.2/termux-app_v0.118.2+github-debug_arm64-v8a.apk)
 - [VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 
-# $${\color{red}Auto- Install}$$
+# Auto Install
 ```
 pkg update && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
@@ -33,33 +33,33 @@ kali vnc &
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
-## $${\color{red}Login- User}$$
+## Login- User
 ```
 kali
 ```
-## $${\color{red}Login- Root}$$
+## Login- Root
 ```
 kali -r
 ```
-## $${\color{red}Logout}$$
+## Logout
 ```
 exit
 ```
-## $${\color{red}Uninstall}$$
+## Uninstall
 ```
 kali-uninstall
 ```
 
 <br><br>
 
-# $${\color{red}Terminal}$$
+# Terminal
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
 
 
 <details><summary>
 
-## $${\color{red}Disable- phantom- process- killer}$$
+## Disable- phantom- process- killer
  </summary>
  
 > " Process completed (signal 9) - press Enter "
