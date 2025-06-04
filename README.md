@@ -53,6 +53,7 @@ kali-uninstall
 <br><br>
 
 # Terminal
+> Password: `kali`
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
 
