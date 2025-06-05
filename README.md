@@ -39,11 +39,11 @@ kali vnc &
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
-## Login- User
+## Login User
 ```
 kali
 ```
-## Login- Root
+## Login Root
 ```
 kali -r
 ```
