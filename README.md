@@ -8,8 +8,8 @@
 
 # Requirements
 - Arm64
-- 15GB Storage spaces
-- [Termux](https://f-droid.org/repo/com.termux_1002.apk)
+- 15GB Storage
+- [Termux app](https://f-droid.org/repo/com.termux_1002.apk)
 - [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 
 # Auto Install
