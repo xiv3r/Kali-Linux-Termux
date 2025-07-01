@@ -2,7 +2,7 @@
  
 <p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalivnc.jpg">
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHGui.jpg">
 
 <br>
 
@@ -10,7 +10,7 @@
 - Arm64
 - 15GB Storage spaces
 - [Termux](https://github.com/termux/termux-app/releases/download/v0.118.2/termux-app_v0.118.2+github-debug_arm64-v8a.apk)
-- [VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
+- [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 
 # Auto Install
 - # Kali Nethunter Full with VNC - 2.1GB
@@ -60,7 +60,7 @@ kali-uninstall
 # Terminal
 > Password: `kali`
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/kalinh.png">
+<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
 
 
 <details><summary>
