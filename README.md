@@ -25,16 +25,16 @@ pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubuserco
 > - After the installation type the following command in the termux terminal (not the kali)
 
 > - Setup VNC password
-```diff
+```
 kali vnc passwd
 ```        
 > - Run VNC service `127.0.0.1:5901`
-```diff
+```
 kali vnc &
 ```
-
+<details><summary></summary>
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
-
+</details>
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
