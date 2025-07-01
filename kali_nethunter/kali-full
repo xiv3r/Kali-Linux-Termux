@@ -36,7 +36,7 @@ echo " "
 echo "[*] Decompressing 14GB of files takes 15-20 minutes...!!!"
 echo " "
 echo "[*] Extracting $TAR...!!!"
-proot --link2symlink bsdtar -xvpJf $TAR
+proot --link2symlink bsdtar -xvpJf $TAR 2>/dev/null
 
 # Update bash.bashrc
 cat >> $PREFIX/etc/bash.bashrc << EOF
