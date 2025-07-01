@@ -20,7 +20,7 @@ pkg update && pkg install wget -y && wget -qO- https://raw.githubusercontent.com
 ```
 - ### Kali Nethunter Minimal without VNC
 ```
-pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Termux-Pentesting-Distro/refs/heads/main/KaliLinux/Chroot/kali-minimal | bash && kali
+pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/minimal | bash && kali
 ```
 > - Setup for kali nethunter full
 > - After the installation type the following commands in termux terminal
