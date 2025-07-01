@@ -12,7 +12,7 @@ DIR=kali-arm64
 NM=kali
 
 # Display system info
-neofetch --ascii_distro Kali -L
+neofetch --ascii_distro Kali
 
 # Download Kali rootfs
 axel -o $TAR https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-full-arm64.tar.xz
