@@ -13,11 +13,11 @@
 - [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 
 # Auto Install
-- # Kali Nethunter Full with VNC - 2.1GB
+- ## Kali Nethunter Full with VNC - 2.1GB
 ```
 pkg update && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
-- # Kali Nethunter Minimal without VNC - 131MB
+- ## Kali Nethunter Minimal without VNC - 131MB
 ```
 pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/minimal | bash && kali
 ```
@@ -69,7 +69,7 @@ kali-uninstall
 
 <details><summary>
 
-## Disable phantom process killer
+# Disable phantom process killer
  </summary>
  
 > " Process completed (signal 9) - press Enter "
@@ -98,3 +98,5 @@ adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
 </details>
 
+# Common issues
+https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed
