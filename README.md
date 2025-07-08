@@ -32,10 +32,6 @@ kali vnc passwd
 ```
 kali vnc &
 ```
-> - Kill VNC service
-```
-kali kill vnc
-```
 <details><summary></summary>
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
 </details>
@@ -49,6 +45,10 @@ kali
 ## Login Root
 ```
 kali -r
+```
+## Kill VNC service
+```
+kali kill vnc
 ```
 ## Logout
 ```
