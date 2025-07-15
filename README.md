@@ -13,11 +13,13 @@
 - [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 
 # Auto Install
-- ## Kali Nethunter Full with VNC - 2.1GB
+- ## Kali Nethunter Full VNC
+> 2.1GB tarball
 ```
-pkg update && pkg install wget -y && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
+pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali-full | bash && kali
 ```
-- ## Kali Nethunter Minimal without VNC - 131MB
+- ## Kali Nethunter Minimal
+> 131MB tarball Without VNC
 ```
 pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/minimal | bash && kali
 ```
