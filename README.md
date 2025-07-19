@@ -40,30 +40,31 @@ kali vnc &
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 
-## Login User
+# Termux
+Login User
 ```
 kali
 ```
-## Login Root
+Login Root
 ```
 kali -r
 ```
-## Kill VNC service
-```
-kali kill vnc
-```
-## Logout
+Logout
 ```
 exit
 ```
-## Uninstall
+Kill VNC service
+```
+kali kill vnc
+```
+Uninstall
 ```
 kali-uninstall
 ```
 
 <br><br>
 
-# Terminal
+# Screenshot
 > Password: `kali`
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
@@ -71,7 +72,7 @@ kali-uninstall
 
 <details><summary>
 
-# Disable phantom process killer
+# Disable VNC Phantom Process Killer
  </summary>
  
 > " Process completed (signal 9) - press Enter "
@@ -100,5 +101,4 @@ adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
 </details>
 
-# Common issues
-https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed
+# [Common Issues](https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed)
