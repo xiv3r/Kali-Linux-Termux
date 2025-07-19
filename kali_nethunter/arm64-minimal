@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash -e
 
 # Install required packages
 apt install proot bsdtar libxml2 axel neofetch -y
