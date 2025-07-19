@@ -8,6 +8,10 @@
 
 # Requirements
 - Arm64
+- Armhf
+ ```
+getprop ro.product.cpu.abi
+```
 - 15GB Storage
 - [Termux app](https://f-droid.org/repo/com.termux_1002.apk)
 - [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
