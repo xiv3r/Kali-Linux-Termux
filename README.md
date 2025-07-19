@@ -1,6 +1,6 @@
 # <h1 align="center">Kali Nethunter Termux</h1>
  
-<p align="center">Kali Linux NetHunter on Termux is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
+<p align="center">Termux Kali Linux NetHunter is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHGui.jpg">
 
@@ -61,10 +61,9 @@ Uninstall
 ```
 kali-uninstall
 ```
-
 <br><br>
 
-# Screenshot
+# Terminal
 > Password: `kali`
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
