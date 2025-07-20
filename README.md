@@ -37,6 +37,7 @@ pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubuserco
 ```
 pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-minimal | bash && kali
 ```
+# Setup VNC
 > - Setup for Kali Nethunter Full "arm64" and "armhf"
 > - After the installation type the following command in the termux terminal (not the kali)
 
