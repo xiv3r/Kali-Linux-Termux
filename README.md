@@ -4,39 +4,42 @@
 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHGui.jpg">
 
-<br>
+<br></br>
 
 # Requirements
 - Arm64
 - Armhf
- ```
-getprop ro.product.cpu.abi
-```
 - 15GB Storage
 - [Termux app](https://f-droid.org/repo/com.termux_1002.apk)
 - [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
+<br></br>
 
-# Auto Install
-- ## Kali Nethunter Full VNC - arm64
+# Auto Install [ARM64]
+- Kali Nethunter Full VNC 
 > 2.1GB tarball
+```diff
+-; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/arm64-full | bash && kali
 ```
-pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/arm64-full | bash && kali
-```
-- ## Kali Nethunter Minimal - arm64
+- Kali Nethunter Minimal
 > 131MB tarball Without VNC
+```diff
+-; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/arm64-minimal | bash && kali
 ```
-pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/arm64-minimal | bash && kali
-```
-- ## Kali Nethunter Full VNC - armhf
+<br></br>
+
+# Auto Install [ARMHF]
+- Kali Nethunter Full VNC
 > 2GB tarball
+```diff
+-; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-full | bash && kali
 ```
-pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-full | bash && kali
-```
-- ## Kali Nethunter Full Minimal - armhf
+- Kali Nethunter Full Minimal
 > 122MB tarball without VNC
+```diff
+-; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-minimal | bash && kali
 ```
-pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-minimal | bash && kali
-```
+<br></br>
+
 # Setup VNC
 > - Setup for Kali Nethunter Full "arm64" and "armhf"
 > - After the installation type the following command in the termux terminal (not the kali)
@@ -54,6 +57,7 @@ kali vnc &
 </details>
 
 > Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
+<br></br>
 
 # Termux
 Login User
@@ -76,7 +80,7 @@ Uninstall
 ```
 kali-uninstall
 ```
-<br><br>
+<br></br>
 
 # Terminal
 > Password: `kali`
