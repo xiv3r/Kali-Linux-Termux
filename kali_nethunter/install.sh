@@ -7,18 +7,11 @@ clear
 cd $HOME
 
 # Display system info
-neofetch --ascii_distro Kali
+neofetch --ascii_distro Kali -L
 
-# Colors
-red='\033[1;31m'
-green='\033[1;32m'
-yellow='\033[1;33m'
-blue='\033[1;34m'
-light_cyan='\033[1;96m'
-reset='\033[0m'
-
+# Get device architecture 
 function unsupported_arch() {
-    printf "${red}\n[*] Unsupported Architecture\n[*] Setup Exited...\n${reset}"
+    echo "[*] Unsupported Architecture!"
     exit 1
 }
 
