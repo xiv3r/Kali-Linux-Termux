@@ -81,7 +81,7 @@ sha512sum $IMAGE_NAME
 # Extract rootfs
 echo " "
 echo "[*] Extracting $IMAGE_NAME, Please wait...!!!"
-proot --link2symlink bsdtar -xpJf $IMAGE_NAME 2>/dev/null
+proot --link2symlink bsdtar -xpJf $IMAGE_NAME >/dev/null 2>&1
 
 # Update bash.bashrc
 cat >> $PREFIX/etc/bash.bashrc << EOF
