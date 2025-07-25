@@ -9,70 +9,58 @@ cd $HOME
 # Display system info
 neofetch --ascii_distro Kali -L
 
-# Get device architecture 
-function unsupported_arch() {
-    echo "[*] Unsupported Architecture!"
-    exit 1
-}
+# Get device architecture
+case $(getprop ro.product.cpu.abi) in
+    arm64-v8a)
+        SYS_ARCH=arm64
+        ;;
+    armeabi|armeabi-v7a)
+        SYS_ARCH=armhf
+        ;;
+    *)
+        echo "[*] Unsupported Architecture!"
+        exit 1
+        ;;
+esac
 
-function get_arch() {
-    case $(getprop ro.product.cpu.abi) in
-        arm64-v8a)
-            SYS_ARCH=arm64
-            ;;
-        armeabi|armeabi-v7a)
-            SYS_ARCH=armhf
-            ;;
-        *)
-            unsupported_arch
-            ;;
-    esac
-}
-
-function set_strings() {
-    echo && echo ""
-    ####
-    if [[ ${SYS_ARCH} == "arm64" ]]; then
-        echo "[1] Kali NetHunter ARM64 [Full]"
-        echo "[2] Kali NetHunter ARM64 [Minimal]"
-        echo "[3] Kali NetHunter ARM64 [Nano]"
-        echo ""
-        read -rp "Select the image to install: " wimg
-        if [[ $wimg == "1" ]]; then
-            wimg="full"
-        elif [[ $wimg == "2" ]]; then
-            wimg="minimal"
-        elif [[ $wimg == "3" ]]; then
-            wimg="nano"
-        else
-            wimg="full"
-        fi
-    elif [[ ${SYS_ARCH} == "armhf" ]]; then
-        echo "[1] Kali NetHunter ARMHF [Full]"
-        echo "[2] Kali NetHunter ARMHF [Minimal]"
-        echo "[3] Kali NetHunter ARMHF [Nano]"
-        echo ""
-        read -rp "Select the image to install: " wimg
-        if [[ "$wimg" == "1" ]]; then
-            wimg="full"
-        elif [[ "$wimg" == "2" ]]; then
-            wimg="minimal"
-        elif [[ "$wimg" == "3" ]]; then
-            wimg="nano"
-        else
-            wimg="full"
-        fi
+# Set image strings
+echo && echo ""
+if [[ ${SYS_ARCH} == "arm64" ]]; then
+    echo "[1] Kali NetHunter ARM64 [Full]"
+    echo "[2] Kali NetHunter ARM64 [Minimal]"
+    echo "[3] Kali NetHunter ARM64 [Nano]"
+    echo ""
+    read -rp "Select the image to install: " wimg
+    if [[ $wimg == "1" ]]; then
+        wimg="full"
+    elif [[ $wimg == "2" ]]; then
+        wimg="minimal"
+    elif [[ $wimg == "3" ]]; then
+        wimg="nano"
+    else
+        wimg="full"
     fi
+elif [[ ${SYS_ARCH} == "armhf" ]]; then
+    echo "[1] Kali NetHunter ARMHF [Full]"
+    echo "[2] Kali NetHunter ARMHF [Minimal]"
+    echo "[3] Kali NetHunter ARMHF [Nano]"
+    echo ""
+    read -rp "Select the image to install: " wimg
+    if [[ "$wimg" == "1" ]]; then
+        wimg="full"
+    elif [[ "$wimg" == "2" ]]; then
+        wimg="minimal"
+    elif [[ "$wimg" == "3" ]]; then
+        wimg="nano"
+    else
+        wimg="full"
+    fi
+fi
 
 ####
 DIR=kali-${SYS_ARCH}
 IMAGE_NAME=kali-nethunter-rootfs-${wimg}-${SYS_ARCH}.tar.xz
 NM=kali
-}
-
-# Get architecture and set variables
-get_arch
-set_strings
 
 # Download Kali rootfs
 axel -o $IMAGE_NAME https://kali.download/nethunter-images/current/rootfs/$IMAGE_NAME
