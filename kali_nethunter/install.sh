@@ -158,9 +158,13 @@ fi
 EOF
 chmod 755 $PREFIX/bin/$NM
 
+# Download and configure vnc
+wget -O $DIR/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
+chmod 755 $DIR/bin/vnc
+
 # Add neofetch
 wget -O $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
-chmod 700 $DIR/bin/neofetch
+chmod 755 $DIR/bin/neofetch
 
 # Add uninstallation config file
 cat > $PREFIX/bin/$NM-uninstall << EOF
@@ -214,5 +218,5 @@ rm $IMAGE_NAME
 cat << EOF
 [*] Successful Installation...!
 
-[*] To Login Kali Nethunter Minimal Type: $NM
+[*] To Login Kali Nethunter Type: $NM
 EOF
