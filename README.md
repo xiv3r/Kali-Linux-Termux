@@ -7,48 +7,27 @@
 <br></br>
 
 # Requirements
-- Arm64
-- Armhf
 - 15GB Storage
 - [Termux app](https://f-droid.org/repo/com.termux_1002.apk)
 - [Nethunter VNC](https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk)
 <br></br>
 
-# Auto Install [ARM64]
-- Kali Nethunter Full VNC 
-> 2.1GB tarball
+# Auto Install
 ```diff
--; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/arm64-full | bash && kali
+-; pkg update && pkg install wget -y && clear && wget -O install.sh https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/install.sh && chmod +x install.sh && bash install.sh
 ```
-- Kali Nethunter Minimal
-> 131MB tarball Without VNC
-```diff
--; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/arm64-minimal | bash && kali
-```
-<br></br>
-
-# Auto Install [ARMHF]
-- Kali Nethunter Full VNC
-> 2GB tarball
-```diff
--; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-full | bash && kali
-```
-- Kali Nethunter Full Minimal
-> 122MB tarball without VNC
-```diff
--; pkg update && pkg install wget -y && clear && wget -qO- https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/armhf-minimal | bash && kali
-```
-<br></br>
+<br>
 
 # Setup VNC
-> - Setup for Kali Nethunter Full "arm64" and "armhf"
+> - Setup for Kali Nethunter Full
 > - After the installation type the following command in the termux terminal (not the kali)
 
 > - Setup VNC password
 ```
 kali vnc passwd
-```        
-> - Run VNC service `127.0.0.1:5901`
+```
+# Run VNC
+> - `127.0.0.1:5901`
 ```
 kali vnc &
 ```
@@ -56,7 +35,7 @@ kali vnc &
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
 </details>
 
-> Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
+> - Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
 <br></br>
 
 # Termux
