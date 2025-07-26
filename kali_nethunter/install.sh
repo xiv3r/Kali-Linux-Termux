@@ -141,16 +141,17 @@ EOF
 chmod 755 "$PREFIX/bin/$NM"
 
 # Download and configure vnc
-wget -O "$DIR/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc"
+wget -q -O "$DIR/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc" >/dev/null 2>&1 
 chmod 755 "$DIR/bin/vnc"
 
 # Add neofetch
-wget -O "$DIR/bin/neofetch" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch"
+wget -q -O "$DIR/bin/neofetch" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch" >/dev/null 2>&1
 chmod 755 "$DIR/bin/neofetch"
 
 # Add uninstallation config file
 cat > "$PREFIX/bin/$NM-uninstall" << EOF
 #!/bin/bash
+
 rm -rf "$HOME/$DIR"
 rm -rf "$PREFIX/bin/$NM"
 sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
