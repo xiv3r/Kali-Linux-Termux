@@ -16,8 +16,6 @@
 ```diff
 -; pkg update && pkg install wget -y && clear && wget -O install.sh https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/install.sh && chmod +x install.sh && bash install.sh
 ```
-<br>
-
 # Setup VNC
 > - Setup for Kali Nethunter Full
 > - After the installation type the following command in the termux terminal (not the kali)
@@ -39,7 +37,6 @@ kali vnc &
 <br></br>
 
 # Usage
-> - Termux terminal
 Login User
 ```
 kali
