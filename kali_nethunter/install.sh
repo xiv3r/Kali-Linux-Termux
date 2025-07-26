@@ -38,8 +38,8 @@ if [[ ${SYS_ARCH} == "arm64" ]]; then
         *) wimg="full" ;;
     esac
 elif [[ ${SYS_ARCH} == "armhf" ]]; then
-    echo "[1] Kali NetHunter ARMHF [ Full] "
-    echo "[2] Kali NetHunter ARMHF [ Minimal] "
+    echo "[1] Kali NetHunter ARMHF [ Full ] "
+    echo "[2] Kali NetHunter ARMHF [ Minimal ] "
     echo "[3] Kali NetHunter ARMHF [ Nano ]"
     read -rp "Select the number to install: " wimg
     echo " "
