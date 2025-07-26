@@ -7,7 +7,7 @@ clear
 cd "$HOME" || exit
 
 # Display system info
-neofetch --ascii_distro Kali -L
+neofetch --ascii_distro Kali
 
 # Get device architecture
 case $(getprop ro.product.cpu.abi) in
