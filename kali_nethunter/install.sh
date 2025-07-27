@@ -155,6 +155,7 @@ cat > "$PREFIX/bin/$NM-uninstall" << EOF
 
 rm -rf "$HOME/$DIR"
 rm -rf "$PREFIX/bin/$NM"
+sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
 rm -rf "$PREFIX/bin/$NM-uninstall"
