@@ -79,6 +79,7 @@ proot --link2symlink bsdtar -xpJf "$IMAGE_NAME" >/dev/null 2>&1
 
 # Update bash.bashrc
 cat >> "$PREFIX/etc/bash.bashrc" << EOF
+termux-wake-lock
 clear
 $NM
 EOF
