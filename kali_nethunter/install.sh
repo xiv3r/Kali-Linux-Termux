@@ -26,27 +26,27 @@ esac
 # Set image strings
 echo && echo ""
 if [[ ${SYS_ARCH} == "arm64" ]]; then
-    echo "[1] Kali NetHunter ARM64 [ Full ]"
-    echo "[2] Kali NetHunter ARM64 [ Minimal ]"
-    echo "[3] Kali NetHunter ARM64 [ Nano ]"
+    echo "[1] Kali NetHunter ARM64 Full"
+    echo "[2] Kali NetHunter ARM64 Minimal"
+    echo "[3] Kali NetHunter ARM64 Nano"
     read -rp "Select the number to install: " wimg
     echo " "
     case $wimg in
-        "1") wimg="full" ;;
-        "2") wimg="minimal" ;;
-        "3") wimg="nano" ;;
+        1) wimg="full" ;;
+        2) wimg="minimal" ;;
+        3) wimg="nano" ;;
         *) wimg="full" ;;
     esac
 elif [[ ${SYS_ARCH} == "armhf" ]]; then
-    echo "[1] Kali NetHunter ARMHF [ Full ] "
-    echo "[2] Kali NetHunter ARMHF [ Minimal ] "
-    echo "[3] Kali NetHunter ARMHF [ Nano ]"
+    echo "[1] Kali NetHunter ARMhf Full"
+    echo "[2] Kali NetHunter ARMhf Minimal"
+    echo "[3] Kali NetHunter ARMhf Nano"
     read -rp "Select the number to install: " wimg
     echo " "
     case $wimg in
-        "1") wimg="full" ;;
-        "2") wimg="minimal" ;;
-        "3") wimg="nano" ;;
+        1) wimg="full" ;;
+        2) wimg="minimal" ;;
+        3) wimg="nano" ;;
         *) wimg="full" ;;
     esac
 fi
