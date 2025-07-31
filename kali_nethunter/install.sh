@@ -202,6 +202,7 @@ rm -f "$IMAGE_NAME"
 
 # Display success message
 cat << EOF
+
 [*] Successful Installation...!
 
 [*] To Login Kali Nethunter Type: $NM
