@@ -98,4 +98,4 @@ adb shell /system/bin/device_config get activity_manager max_phantom_processes
 </details>
 
 # $${\color{magenta}Common-Issues}$$
-[👉](https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed)
+[👉](https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed) https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed
