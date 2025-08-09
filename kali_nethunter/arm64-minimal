@@ -100,7 +100,7 @@ EOF
 chmod 700 $PREFIX/bin/$NM
 
 # Add neofetch
-wget -O $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
+wget -q -O $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
 chmod 700 $DIR/bin/neofetch
 
 # Add uninstallation config file
