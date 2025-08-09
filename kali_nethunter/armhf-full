@@ -41,30 +41,34 @@ proot --link2symlink bsdtar -xpJf $TAR 2>/dev/null
 # Update bash.bashrc
 cat >> $PREFIX/etc/bash.bashrc << EOF
 clear
+termux-wake-lock
 ($NM vnc) &
 $NM
 EOF
 
 # Download and configure scripts
-wget -O $DIR/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
+wget -q -O $DIR/bin/vnc https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc
 chmod 700 $DIR/bin/vnc
 
 # Adding shortcut file
-wget -O $PREFIX/bin/$NM https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali
+wget -q -O $PREFIX/bin/$NM https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/kali
 chmod 700 $PREFIX/bin/$NM
 
 # Add neofetch
-wget -O $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
+wget -q -O $DIR/bin/neofetch https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch
 chmod 700 $DIR/bin/neofetch
 
 # Add uninstallation config file
 cat > $PREFIX/bin/$NM-uninstall << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+
 rm -rf $HOME/$DIR
 rm -rf $PREFIX/bin/$NM
 sed -i 's/clear//g' $PREFIX/etc/bash.bashrc
+sed -i 's/termux-wake-lock//g' $PREFIX/etc/bash.bashrc
 sed -i 's/($NM vnc) &//g' $PREFIX/etc/bash.bashrc
 sed -i 's/$NM//g' $PREFIX/etc/bash.bashrc
-rm -rf $PREFIX/bin/$NM-uninstall
+rm -f $PREFIX/bin/$NM-uninstall
 EOF
 chmod 755 $PREFIX/bin/$NM-uninstall
 
@@ -76,8 +80,10 @@ chmod +s $DIR/bin/sudo
 chmod +s $DIR/bin/su
 
 # Fix DNS issue
-cat > $DIR/etc/resolv.conf << EOF
+cat >> $DIR/etc/resolv.conf << EOF
 nameserver 9.9.9.10
+nameserver 1.1.1.1
+nameserver 8.8.4.4
 EOF
 
 # Fix sudoer file
@@ -102,7 +108,7 @@ $NM -r usermod -u $USRID $NM 2>/dev/null
 $NM -r groupmod -g $GRPID $NM 2>/dev/null
 
 # Delete tarball
-rm $TAR
+rm -f $TAR
 
 # Display success message
 cat << EOF
