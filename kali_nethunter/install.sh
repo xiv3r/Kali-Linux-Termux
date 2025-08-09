@@ -4,7 +4,7 @@
 pkg install proot bsdtar libxml2 axel neofetch -y
 clear
 
-cd "$HOME" || exit
+cd "$HOME"
 
 # Display system info
 neofetch --ascii_distro Kali
@@ -87,9 +87,12 @@ EOF
 # Adding shortcut file
 cat > "$PREFIX/bin/$NM" <<- EOF
 #!/data/data/com.termux/files/usr/bin/bash -e
-cd \${HOME} || exit
+
+cd \${HOME}
+
 ## termux-exec sets LD_PRELOAD so let's unset it before continuing
 unset LD_PRELOAD
+
 ## Workaround for Libreoffice, also needs to bind a fake /proc/version
 if [ ! -f $DIR/root/.version ]; then
     touch $DIR/root/.version
@@ -151,14 +154,14 @@ chmod 755 "$DIR/bin/neofetch"
 
 # Add uninstallation config file
 cat > "$PREFIX/bin/$NM-uninstall" << EOF
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 rm -rf "$HOME/$DIR"
 rm -rf "$PREFIX/bin/$NM"
 sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
-rm -rf "$PREFIX/bin/$NM-uninstall"
+rm -f "$PREFIX/bin/$NM-uninstall"
 EOF
 chmod 755 "$PREFIX/bin/$NM-uninstall"
 
@@ -170,7 +173,7 @@ chmod +s "$DIR/usr/bin/sudo"
 chmod +s "$DIR/usr/bin/su"
 
 # Fix DNS issue
-cat > "$DIR/etc/resolv.conf" << EOF
+cat >> "$DIR/etc/resolv.conf" << EOF
 nameserver 9.9.9.10
 nameserver 8.8.4.4
 nameserver 1.1.1.1
