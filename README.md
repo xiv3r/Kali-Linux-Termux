@@ -61,16 +61,14 @@ kali-uninstall
 
 # $${\color{magenta}Terminal}$$
 > Password: `kali`
-<details><summary></summary>
- 
+<details><summary></summary> 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
 </details>
 
 <details><summary>
 
 # $${\color{magenta}Disable-VNC-Phantom-Process-Killer}$$
-
- </summary>
+</summary>
  
 > " Process completed (signal 9) - press Enter "
 > 
