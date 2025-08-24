@@ -58,13 +58,13 @@ kali kill vnc
 ```
 kali-uninstall
 ```
-<br></br>
 
 # $${\color{magenta}Terminal}$$
 > Password: `kali`
-
+<details><summary></summary>
+ 
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
-
+</details>
 
 <details><summary>
 
@@ -96,6 +96,3 @@ adb shell /system/bin/dumpsys activity settings | grep max_phantom_processes
 adb shell /system/bin/device_config get activity_manager max_phantom_processes
 ```
 </details>
-
-# $${\color{magenta}Common-Issues}$$
-[👉](https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed) https://github.com/xiv3r/Kali-Linux-Termux/issues?q=is%3Aissue%20state%3Aclosed
