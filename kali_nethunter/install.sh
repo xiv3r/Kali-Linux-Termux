@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash -e
+#!/data/data/com.termux/files/usr/bin/bash
 
 # Install required packages
 pkg install proot bsdtar libxml2 axel neofetch -y
@@ -145,11 +145,11 @@ EOF
 chmod 755 "$PREFIX/bin/$NM"
 
 # Download and configure vnc
-wget -q -O "$DIR/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc" >/dev/null 2>&1 
+wget -qO "$DIR/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc" >/dev/null 2>&1 
 chmod 755 "$DIR/bin/vnc"
 
 # Add neofetch
-wget -q -O "$DIR/bin/neofetch" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch" >/dev/null 2>&1
+wget -qO "$DIR/bin/neofetch" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch" >/dev/null 2>&1
 chmod 755 "$DIR/bin/neofetch"
 
 # Add uninstallation config file
@@ -174,8 +174,8 @@ chmod +s "$DIR/usr/bin/su"
 
 # Fix DNS issue
 cat >> "$DIR/etc/resolv.conf" << EOF
-nameserver 9.9.9.10
-nameserver 8.8.4.4
+nameserver 9.9.9.9
+nameserver 8.8.8.8
 nameserver 1.1.1.1
 EOF
 
@@ -205,7 +205,6 @@ rm -f "$IMAGE_NAME"
 
 # Display success message
 cat << EOF
-
 [*] Successful Installation...!
 
 [*] To Login Kali Nethunter Type: $NM
