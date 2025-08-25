@@ -17,7 +17,7 @@
 ```diff
 -; pkg update && pkg install wget -y && clear && wget -qO install.sh https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/install.sh && chmod +x install.sh && bash install.sh && kali
 ```
-# $${\color{magenta}Setup-VNC}$$
+### $${\color{magenta}Setup-VNC}$$
 > - Setup for Kali Nethunter Full
 > - After the installation type the following command in the termux terminal (not the kali)
 
@@ -25,7 +25,7 @@
 ```
 kali vnc passwd
 ```
-# $${\color{magenta}Run-VNC}$$
+### $${\color{magenta}Run-VNC}$$
 > - `127.0.0.1:5901`
 ```
 kali vnc &
@@ -38,23 +38,23 @@ kali vnc &
 <br></br>
 
 # $${\color{magenta}Usage}$$
-- $${\color{red}Login-User}$$
+- $${\color{magenta}Login-User}$$
 ```
 kali
 ```
-- $${\color{red}Login-Root}$$
+- $${\color{magenta}Login-Root}$$
 ```
 kali -r
 ```
-- $${\color{red}Logout}$$
+- $${\color{magenta}Logout}$$
 ```
 exit
 ```
-- $${\color{red}Kill-VNC-service}$$
+- $${\color{magenta}Kill-VNC-service}$$
 ```
 kali kill vnc
 ```
-- $${\color{red}Uninstall}$$
+- $${\color{magenta}Uninstall}$$
 ```
 kali-uninstall
 ```
@@ -67,7 +67,7 @@ kali-uninstall
 
 <details><summary>
 
-# $${\color{magenta}Disable-VNC-Phantom-Process-Killer}$$
+## $${\color{magenta}Disable-VNC-Phantom-Process-Killer}$$
 </summary>
  
 > " Process completed (signal 9) - press Enter "
