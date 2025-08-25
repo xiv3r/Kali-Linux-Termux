@@ -28,7 +28,7 @@ kali vnc passwd
 ### $${\color{magenta}Run-VNC}$$
 > - `127.0.0.1:5901`
 ```
-kali vnc &
+( kali vnc & )
 ```
 <details><summary></summary>
 <img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
