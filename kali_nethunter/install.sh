@@ -92,6 +92,10 @@ cd \${HOME}
 
 ## termux-exec sets LD_PRELOAD so let's unset it before continuing
 unset LD_PRELOAD
+unset LD_LIBRARY_PATH
+
+# Export library
+export LD_LIBRARY_PATH=$HOME/kali-arm64/lib:/data/data/com.termux/files/usr/lib
 
 ## Workaround for Libreoffice, also needs to bind a fake /proc/version
 if [ ! -f $DIR/root/.version ]; then
