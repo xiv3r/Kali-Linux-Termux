@@ -35,7 +35,7 @@ if [[ ${SYS_ARCH} == "arm64" ]]; then
         1) wimg="full" ;;
         2) wimg="minimal" ;;
         3) wimg="nano" ;;
-        *) wimg="full" ;;
+        *) wimg="minimal" ;;
     esac
 elif [[ ${SYS_ARCH} == "armhf" ]]; then
     echo "[1] Kali NetHunter ARMhf Full"
@@ -47,7 +47,7 @@ elif [[ ${SYS_ARCH} == "armhf" ]]; then
         1) wimg="full" ;;
         2) wimg="minimal" ;;
         3) wimg="nano" ;;
-        *) wimg="full" ;;
+        *) wimg="minimal" ;;
     esac
 fi
 
