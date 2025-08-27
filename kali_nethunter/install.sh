@@ -86,16 +86,16 @@ EOF
 
 # Adding shortcut file
 cat > "$PREFIX/bin/$NM" <<- EOF
-#!/data/data/com.termux/files/usr/bin/bash -e
+#!/data/data/com.termux/files/usr/bin/bash
 
-cd \${HOME}
+cd "$HOME"
 
 ## termux-exec sets LD_PRELOAD so let's unset it before continuing
 unset LD_PRELOAD
 unset LD_LIBRARY_PATH
 
 # Export library
-export LD_LIBRARY_PATH=$HOME/$DIR/lib:/data/data/com.termux/files/usr/lib
+export LD_LIBRARY_PATH=/data/data/com.termux/files/home/$DIR/lib:$LD_LIBRARY_PATH
 
 ## Workaround for Libreoffice, also needs to bind a fake /proc/version
 if [ ! -f $DIR/root/.version ]; then
@@ -124,7 +124,7 @@ if [[ \$KALIUSR == "0" || ("\$#" != "0" && ("\$1" == "-r" || "\$1" == "-R")) ]];
 fi
 
 cmdline="proot \\
-        --link2symlink \\
+        --link2symlink -p \\
         -0 \\
         -r $DIR \\
         -b /dev \\
