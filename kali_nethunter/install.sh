@@ -78,6 +78,9 @@ echo "[*] Extracting $IMAGE_NAME, Please wait...!!!"
 proot --link2symlink bsdtar -xpJf "$IMAGE_NAME" >/dev/null 2>&1
 
 # Update bash.bashrc
+sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
 cat >> "$PREFIX/etc/bash.bashrc" << EOF
 termux-wake-lock
 clear
@@ -161,7 +164,7 @@ cat > "$PREFIX/bin/$NM-uninstall" << EOF
 #!/data/data/com.termux/files/usr/bin/bash
 
 rm -rf "$HOME/$DIR"
-rm -rf "$PREFIX/bin/$NM"
+rm -f "$PREFIX/bin/$NM"
 sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
@@ -178,7 +181,7 @@ chmod +s "$DIR/usr/bin/sudo"
 chmod +s "$DIR/usr/bin/su"
 
 # Fix DNS issue
-cat >> "$DIR/etc/resolv.conf" << EOF
+cat > "$DIR/etc/resolv.conf" << EOF
 nameserver 9.9.9.9
 nameserver 8.8.8.8
 nameserver 1.1.1.1
@@ -190,6 +193,7 @@ $NM    ALL=(ALL:ALL) ALL
 EOF
 
 # Update bash.bashrc inside chroot
+sed -i '/neofetch/d' "$DIR/etc/bash.bashrc"
 cat >> "$DIR/etc/bash.bashrc" << EOF
 neofetch
 EOF
@@ -210,7 +214,6 @@ rm -f "$IMAGE_NAME"
 
 # Display success message
 cat << EOF
-[*] Successful Installation...!
 
 [*] To Login Kali Nethunter Type: $NM
 EOF
