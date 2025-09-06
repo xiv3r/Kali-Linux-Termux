@@ -211,6 +211,7 @@ GRPID=$(id -g)
 
 # Delete tarball
 rm -f "$IMAGE_NAME"
+rm -f install.sh
 
 # Display success message
 cat << EOF
