@@ -1,5 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# fix repo
+sed -i '/echo deb https://packages-cf.termux.dev/apt/termux-main stable main > $PREFIX/etc/apt/sources.list/d' "$PREFIX/etc/bash.bashrc"
+cat >> "$PREFIX/etc/bash.bashrc" << EOF
+echo deb https://packages-cf.termux.dev/apt/termux-main stable main > $PREFIX/etc/apt/sources.list
+EOF
+
 # Install required packages
 pkg install proot bsdtar libxml2 axel neofetch -y
 clear
