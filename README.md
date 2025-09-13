@@ -3,7 +3,7 @@
  
 <p align="center">Termux Kali Linux NetHunter is a powerful tool for security professionals and enthusiasts. It allows users to perform a variety of security assessments on their Android devices without rooting them.</p>
 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHGui.jpg">
+<img width="auto" height="auto" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/NHGui.jpg">
 
 <br></br>
 
@@ -31,7 +31,7 @@ kali vnc passwd
 echo "( kali vnc & )" >> $PREFIX/etc/bash.bashrc && ( kali vnc & )
 ```
 <details><summary></summary>
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
+<img width="auto" height="auto" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/vncsetup.png">
 </details>
 
 > - Next Open the VNC client and add the address `127.0.0.1:5901` and type `kali` as username and your vnc `password`
@@ -62,7 +62,7 @@ kali-uninstall
 # $${\color{magenta}Terminal}$$
 > Password: `kali`
 <details><summary></summary> 
-<img src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
+<img width="auto" height="auto" src="https://github.com/xiv3r/Kali-Linux-Termux/blob/main/kali_nethunter/nhterm.png">
 </details>
 
 <details><summary>
