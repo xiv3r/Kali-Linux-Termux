@@ -1,6 +1,20 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# Fix repo
+cat > "$PREFIX/etc/apt/sources.list" << EOF
+deb https://packages.termux.dev/apt/termux-main stable main
+EOF
+
+# Fix mirrors
 cd "$PREFIX/etc/termux/mirrors"
+
+cat > default << EOF
+WEIGHT=1
+MAIN="https://packages.termux.dev/apt/termux-main"
+ROOT="https://packages.termux.dev/apt/termux-root"
+X11="https://packages.termux.dev/apt/termux-x11"
+EOF
+chmod +x default
 
 rm -f asia/*
 rm -f chinese_mainland/*
