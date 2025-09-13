@@ -1,12 +1,29 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+cd "$PREFIX/etc/termux/mirrors"
+
+rm -f asia/*
+rm -f chinese_mainland/*
+rm -f europe/*
+rm -f north_america/*
+rm -f oceania/*
+rm -f russia/*
+
+cp default asia
+cp default chinese_mainland
+cp default europe
+cp default north_america
+cp default oceania
+cp default russia
+
 cd "$HOME"
 
-# fix repo
-sed -i '\|echo deb https://packages-cf.termux.dev/apt/termux-main stable main > $PREFIX/etc/apt/sources.list|d' $PREFIX/etc/bash.bashrc
-cat >> $PREFIX/etc/bash.bashrc << 'EOF'
-echo deb https://packages-cf.termux.dev/apt/termux-main stable main > $PREFIX/etc/apt/sources.list
-EOF
+# Install required packages
+pkg install proot bsdtar libxml2 axel neofetch -y
+clear
+
+# Display system info
+neofetch --ascii_distro Kali
 
 # Start-up
 sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
@@ -18,12 +35,6 @@ clear
 kali
 EOF
 
-# Install required packages
-pkg install proot bsdtar libxml2 axel neofetch -y
-clear
-
-# Display system info
-neofetch --ascii_distro Kali
 
 # Get device architecture
 case $(getprop ro.product.cpu.abi) in
