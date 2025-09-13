@@ -17,7 +17,7 @@ rm -f oceania/*
 rm -f russia/*
 
 cat > default << EOF
-WEIGHT=1
+WEIGHT=0
 MAIN="https://packages-cf.termux.dev/apt/termux-main"
 ROOT="https://packages-cf.termux.dev/apt/termux-root"
 X11="https://packages-cf.termux.dev/apt/termux-x11"
