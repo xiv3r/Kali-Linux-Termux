@@ -2,7 +2,7 @@
 
 # Fix repo
 cat > "$PREFIX/etc/apt/sources.list" << EOF
-deb https://packages.termux.dev/apt/termux-main stable main
+deb https://packages-cf.termux.dev/apt/termux-main stable main
 EOF
 
 # Fix mirrors
@@ -10,9 +10,9 @@ cd "$PREFIX/etc/termux/mirrors"
 
 cat > default << EOF
 WEIGHT=1
-MAIN="https://packages.termux.dev/apt/termux-main"
-ROOT="https://packages.termux.dev/apt/termux-root"
-X11="https://packages.termux.dev/apt/termux-x11"
+MAIN="https://packages-cf.termux.dev/apt/termux-main"
+ROOT="https://packages-cf.termux.dev/apt/termux-main"
+X11="https://packages-cf.termux.dev/apt/termux-main"
 EOF
 chmod +x default
 
