@@ -5,23 +5,24 @@ cat > "$PREFIX/etc/apt/sources.list" << EOF
 deb https://packages-cf.termux.dev/apt/termux-main stable main
 EOF
 
-# Fix mirrors
+# Fix repo
 cd "$PREFIX/etc/termux/mirrors"
 
-cat > default << EOF
-WEIGHT=1
-MAIN="https://packages-cf.termux.dev/apt/termux-main"
-ROOT="https://packages-cf.termux.dev/apt/termux-main"
-X11="https://packages-cf.termux.dev/apt/termux-main"
-EOF
-chmod +x default
-
+rm -f default
 rm -f asia/*
 rm -f chinese_mainland/*
 rm -f europe/*
 rm -f north_america/*
 rm -f oceania/*
 rm -f russia/*
+
+cat > default << EOF
+WEIGHT=1
+MAIN="https://packages-cf.termux.dev/apt/termux-main"
+ROOT="https://packages-cf.termux.dev/apt/termux-root"
+X11="https://packages-cf.termux.dev/apt/termux-x11"
+EOF
+chmod +x default
 
 cp default asia
 cp default chinese_mainland
