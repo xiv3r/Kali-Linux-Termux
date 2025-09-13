@@ -1,15 +1,26 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+cd "$HOME"
+
 # fix repo
 sed -i '\|echo deb https://packages-cf.termux.dev/apt/termux-main stable main > $PREFIX/etc/apt/sources.list|d' $PREFIX/etc/bash.bashrc
 cat >> $PREFIX/etc/bash.bashrc << 'EOF'
 echo deb https://packages-cf.termux.dev/apt/termux-main stable main > $PREFIX/etc/apt/sources.list
 EOF
+
+# Start-up
+sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
+cat >> "$PREFIX/etc/bash.bashrc" << EOF
+termux-wake-lock
+clear
+$NM
+EOF
+
 # Install required packages
 pkg install proot bsdtar libxml2 axel neofetch -y
 clear
-
-cd "$HOME"
 
 # Display system info
 neofetch --ascii_distro Kali
@@ -82,15 +93,6 @@ echo " "
 echo "[*] Extracting $IMAGE_NAME, Please wait...!!!"
 proot --link2symlink bsdtar -xpJf "$IMAGE_NAME" >/dev/null 2>&1
 
-# Update bash.bashrc
-sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
-sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
-sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
-cat >> "$PREFIX/etc/bash.bashrc" << EOF
-termux-wake-lock
-clear
-$NM
-EOF
 
 # Adding shortcut file
 cat > "$PREFIX/bin/$NM" <<- EOF
