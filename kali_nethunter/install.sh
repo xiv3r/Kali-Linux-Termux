@@ -11,11 +11,11 @@ EOF
 # Start-up
 sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
-sed -i '/$NM/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/kali/d' "$PREFIX/etc/bash.bashrc"
 cat >> "$PREFIX/etc/bash.bashrc" << EOF
 termux-wake-lock
 clear
-$NM
+kali
 EOF
 
 # Install required packages
