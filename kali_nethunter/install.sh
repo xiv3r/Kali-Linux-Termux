@@ -192,6 +192,11 @@ chmod 755 "$DIR/bin/vnc"
 wget -qO "$DIR/bin/neofetch" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/neofetch" >/dev/null 2>&1
 chmod 755 "$DIR/bin/neofetch"
 
+# Add VNC autostart for full installation
+if [ "$wimg" = "full" ]; then
+    echo "( kali vnc & )" >> "$PREFIX/etc/bash.bashrc"
+fi
+
 # Add uninstallation config file
 cat > "$PREFIX/bin/$NM-uninstall" << EOF
 #!/data/data/com.termux/files/usr/bin/bash
