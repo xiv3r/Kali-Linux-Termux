@@ -1,13 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Fix repo
+# Fix Repo
 cat > "$PREFIX/etc/apt/sources.list" << EOF
 deb https://packages-cf.termux.dev/apt/termux-main stable main
 EOF
 
-# Fix repo
+# Fix Mirror
 cd "$PREFIX/etc/termux/mirrors"
-
 rm -f default
 rm -f asia/*
 rm -f chinese_mainland/*
@@ -49,7 +48,6 @@ termux-wake-lock
 clear
 kali
 EOF
-
 
 # Get device architecture
 case $(getprop ro.product.cpu.abi) in
@@ -118,7 +116,6 @@ sha512sum "$IMAGE_NAME"
 echo " "
 echo "[*] Extracting $IMAGE_NAME, Please wait...!!!"
 proot --link2symlink bsdtar -xpJf "$IMAGE_NAME" >/dev/null 2>&1
-
 
 # Adding shortcut file
 cat > "$PREFIX/bin/$NM" <<- EOF
@@ -218,7 +215,7 @@ sed -i '/if/,/fi/d' "$DIR/root/.bash_profile"
 chmod +s "$DIR/usr/bin/sudo"
 chmod +s "$DIR/usr/bin/su"
 
-# Fix DNS issue
+# Fix DNS resolver
 cat > "$DIR/etc/resolv.conf" << EOF
 nameserver 9.9.9.9
 nameserver 8.8.8.8
@@ -230,7 +227,7 @@ cat > "$DIR/etc/sudoers.d/$NM" << EOF
 $NM    ALL=(ALL:ALL) ALL
 EOF
 
-# Update bash.bashrc inside chroot
+# Neofetch
 sed -i '/neofetch/d' "$DIR/etc/bash.bashrc"
 cat >> "$DIR/etc/bash.bashrc" << EOF
 neofetch
@@ -247,7 +244,7 @@ GRPID=$(id -g)
 "$NM" -r usermod -u "$USRID" "$NM" >/dev/null 2>&1
 "$NM" -r groupmod -g "$GRPID" "$NM" >/dev/null 2>&1
 
-# Delete tarball
+# Delete Tarball
 rm -f "$IMAGE_NAME"
 rm -f install.sh
 
