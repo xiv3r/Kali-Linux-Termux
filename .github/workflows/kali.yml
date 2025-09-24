@@ -24,8 +24,7 @@ jobs:
       run: |
         gh release create "kali-updates-$(date +%Y%m%d)" \
           --title "Kali Linux Updates - $(date +'%Y-%m-%d')" \
-
-        Source: https://kali.download/nethunter-images/current/rootfs/" \
+          --notes "Source: https://kali.download/nethunter-images/current/rootfs/" \
           kali-nethunter-rootfs-*.tar.xz
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
