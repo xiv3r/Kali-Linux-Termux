@@ -1,0 +1,31 @@
+name: Update Kali Linux
+
+on:
+  schedule:
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+
+jobs:
+  download-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download Kali NetHunter RootFS Files
+      run: |
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-armhf.tar.xz
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-amd64.tar.xz
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-i386.tar.xz
+
+    - name: Create Release with GH CLI
+      run: |
+        gh release create "kali-updates-$(date +%Y%m%d)" \
+          --title "Kali Linux Updates - $(date +'%Y-%m-%d')" \
+
+        Source: https://kali.download/nethunter-images/current/rootfs/" \
+          kali-nethunter-rootfs-*.tar.xz
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
