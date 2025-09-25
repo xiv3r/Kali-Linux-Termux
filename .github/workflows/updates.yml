@@ -1,0 +1,37 @@
+name: Updating Kali Linux
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  download-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Downloading Kali Linux 
+      run: |
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-armhf.tar.xz
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-amd64.tar.xz
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-i386.tar.xz
+
+    - name: Delete existing assets from release
+      run: |
+        gh release delete-asset "kali-latest" kali-nethunter-rootfs-*.tar.xz --yes || true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload assets to existing release
+      run: |
+        gh release view "kali-latest" || gh release create "kali-latest" \
+          --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
+          --notes " " \
+          
+        gh release upload "kali-latest" kali-nethunter-rootfs-*.tar.xz --clobber
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
