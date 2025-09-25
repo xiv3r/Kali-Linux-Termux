@@ -30,20 +30,20 @@ jobs:
       run: |
         gh release view "kali-latest" || gh release create "kali-latest" \
           --title "Kali Linux Lastest Release: $(date +'%Y-%m-%d')" \
-          --notes "# Termux Lastest
-       - APK
+          --notes "
+       Termux Lastest
+       • APK
        https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk
 
-       - Releases
+       • Releases
        https://github.com/termux/termux-app/releases/
 
-       # Nethunter VNC
-       - APK
+       Nethunter VNC
+       • APK
        https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk
 
-       - Releases
-       https://store.nethunter.com/packages/com.offsec.nethunter.kex
-       " \
+       • Releases
+       https://store.nethunter.com/packages/com.offsec.nethunter.kex" \
 
         
         gh release upload "kali-latest" kali-nethunter-rootfs-*.tar.xz --clobber
