@@ -30,7 +30,6 @@ jobs:
       run: |
         gh release view "kali-latest" || gh release create "kali-latest" \
           --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
-          --notes " " \
           
         gh release upload "kali-latest" kali-nethunter-rootfs-*.tar.xz --clobber
       env:
