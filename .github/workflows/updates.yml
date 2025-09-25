@@ -17,8 +17,33 @@ jobs:
       run: |
         wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz
         wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-armhf.tar.xz
-        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-amd64.tar.xz
-        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-i386.tar.xz
+        
+    - name: Create DETAILS.md with release notes
+      run: |
+        cat > DETAILS.md << 'EOF'
+        # Termux Lastest
+        - APK
+        https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk
+        
+        - Releases
+        https://github.com/termux/termux-app/releases/
+        
+        # Nethunter VNC
+        - APK
+        https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk
+        
+        - Releases
+        https://store.nethunter.com/packages/com.offsec.nethunter.kex
+        EOF
+        
+        echo -e "\n## Checksums" >> DETAILS.md
+        echo '```' >> DETAILS.md
+        for file in kali-nethunter-rootfs-*.tar.xz; do
+          size=$(du -h "$file" | cut -f1)
+          checksum=$(sha256sum "$file" | cut -d' ' -f1)
+          echo "$file - Size: $size - SHA256: $checksum" >> DETAILS.md
+        done
+        echo '```' >> DETAILS.md
 
     - name: Delete existing assets from release
       run: |
@@ -28,9 +53,19 @@ jobs:
 
     - name: Upload assets to existing release
       run: |
-        gh release view "kali-latest" || gh release create "kali-latest" \
-          --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
-          
+        # Check if release exists, create if it doesn't
+        if ! gh release view "kali-latest" > /dev/null 2>&1; then
+          gh release create "kali-latest" \
+            --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
+            --notes-file DETAILS.md
+        else
+          # Update existing release with new notes
+          gh release edit "kali-latest" \
+            --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
+            --notes-file DETAILS.md
+        fi
+        
+        # Upload all rootfs files
         gh release upload "kali-latest" kali-nethunter-rootfs-*.tar.xz --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
