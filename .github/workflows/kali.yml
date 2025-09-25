@@ -1,4 +1,4 @@
-name: Update Kali Linux
+name: Updating Kali Linux
 
 on:
   schedule:
@@ -22,17 +22,15 @@ jobs:
 
     - name: Delete existing assets from release
       run: |
-        # Delete existing assets from the release
-        gh release delete-asset "kali-update" kali-nethunter-rootfs-*.tar.xz --yes || true
+        gh release delete-asset "kali-latest" kali-nethunter-rootfs-*.tar.xz --yes || true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Upload assets to existing release
       run: |
-        gh release view "kali-update" || gh release create "kali-update" \
-          --title "Kali Linux Updates" \
-          --notes "Source: https://kali.download/nethunter-images/current/rootfs/"
-        
-        gh release upload "kali-update" kali-nethunter-rootfs-*.tar.xz --clobber
+        gh release view "kali-latest" || gh release create "kali-latest" \
+          --title "Kali Linux Lastest Release: $(date +'%Y-%m-%d')" \
+          
+        gh release upload "kali-latest" kali-nethunter-rootfs-*.tar.xz --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
