@@ -10,21 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Download Kali NetHunter RootFS Files
+    - name: Downloading Kali Linux
       run: |
         wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz
         wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-armhf.tar.xz
         wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-amd64.tar.xz
         wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-i386.tar.xz
 
-    - name: Create Release with GH CLI
+    - name: Delete existing assets from release
       run: |
-        gh release create "kali-updates-$(date +%Y%m%d)" \
-          --title "Kali Linux Updates - $(date +'%Y-%m-%d')" \
-          --notes "Source: https://kali.download/nethunter-images/current/rootfs/" \
-          kali-nethunter-rootfs-*.tar.xz
+        # Delete existing assets from the release
+        gh release delete-asset "kali-update" kali-nethunter-rootfs-*.tar.xz --yes || true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload assets to existing release
+      run: |
+        gh release view "kali-update" || gh release create "kali-update" \
+          --title "Kali Linux Updates" \
+          --notes "Source: https://kali.download/nethunter-images/current/rootfs/"
+        
+        gh release upload "kali-update" kali-nethunter-rootfs-*.tar.xz --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
