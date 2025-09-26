@@ -15,54 +15,95 @@ jobs:
 
     - name: Downloading Kali Linux 
       run: |
-        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz
-        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-armhf.tar.xz
+        # Download daily builds
+        wget https://image-nethunter.kali.org/nethunter-fs/kali-daily/kali-nethunter-daily-dev-rootfs-minimal-arm64.tar.xz || true
+        wget https://image-nethunter.kali.org/nethunter-fs/kali-daily/kali-nethunter-daily-dev-rootfs-nano-arm64.tar.xz || true
+        wget https://image-nethunter.kali.org/nethunter-fs/kali-daily/kali-nethunter-daily-dev-rootfs-minimal-armhf.tar.xz || true
+        wget https://image-nethunter.kali.org/nethunter-fs/kali-daily/kali-nethunter-daily-dev-rootfs-nano-armhf.tar.xz || true
         
+        # Download current stable builds
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-arm64.tar.xz || true
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-nano-arm64.tar.xz || true
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal-armhf.tar.xz || true
+        wget https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-nano-armhf.tar.xz || true
+        
+    - name: Install GitHub CLI
+      run: |
+        # Install GitHub CLI using the official method
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+        sudo apt update
+        sudo apt install -y gh
+
     - name: Create DETAILS.md with release notes
       run: |
         cat > DETAILS.md << 'EOF'
-        ## Termux Lastest
-        - APK
-        https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk
+        ## Termux app
+        - **apk**: https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk
+        - **release**: https://github.com/termux/termux-app/releases
         
-        - Releases
-        https://github.com/termux/termux-app/releases/
+        ## Nethunter vnc
+        - **apk**: https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk
+        - **release**: https://store.nethunter.com/packages/com.offsec.nethunter.kex
         
-        ## Nethunter VNC
-        - APK
-        https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk
+        ## Architectures
+        - **arm64**: 64-bit ARM devices
+        - **armhf**: 32-bit ARM devices
         
-        - Releases
-        https://store.nethunter.com/packages/com.offsec.nethunter.kex
+        ## Variants
+        - **minimal**: Minimal installation with essential tools
+        - **nano**: Even more minimal footprint
         EOF
         
         echo -e "\n## Checksums" >> DETAILS.md
         echo '```' >> DETAILS.md
-        for file in kali-nethunter-rootfs-*.tar.xz; do
-          size=$(du -h "$file" | cut -f1)
-          checksum=$(sha256sum "$file" | cut -d' ' -f1)
-          echo "$file - Size: $size - SHA256: $checksum" >> DETAILS.md
+        for file in kali-nethunter-*.tar.xz; do
+          if [ -f "$file" ]; then
+            size=$(du -h "$file" | cut -f1)
+            checksum=$(sha256sum "$file" | cut -d' ' -f1)
+            echo "$file - Size: $size - SHA256: $checksum" >> DETAILS.md
+          fi
         done
         echo '```' >> DETAILS.md
 
     - name: Delete existing assets from release
       run: |
-        gh release delete-asset "kali-latest" kali-nethunter-rootfs-*.tar.xz --yes || true
+        # Only delete if release exists
+        if gh release view "kali-latest" > /dev/null 2>&1; then
+          # Get list of existing assets and delete them
+          gh release delete-asset "kali-latest" kali-nethunter-*.tar.xz --yes || true
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Upload assets to existing release
       run: |
-        if ! gh release view "kali-latest" > /dev/null 2>&1; then
-          gh release create "kali-latest" \
-            --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
-            --notes-file DETAILS.md
+        # Check if any files were downloaded
+        if ls kali-nethunter-*.tar.xz 1> /dev/null 2>&1; then
+          # Check if release exists, create if it doesn't
+          if ! gh release view "kali-latest" > /dev/null 2>&1; then
+            gh release create "kali-latest" \
+              --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
+              --notes-file DETAILS.md \
+              --draft=false \
+              --prerelease=false
+          else
+            # Update existing release with new notes
+            gh release edit "kali-latest" \
+              --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
+              --notes-file DETAILS.md
+          fi
+          
+          # Upload all rootfs files that exist
+          for file in kali-nethunter-*.tar.xz; do
+            if [ -f "$file" ]; then
+              echo "Uploading $file"
+              gh release upload "kali-latest" "$file" --clobber
+            fi
+          done
         else
-          gh release edit "kali-latest" \
-            --title "Kali Linux Latest Release: $(date +'%Y-%m-%d')" \
-            --notes-file DETAILS.md
+          echo "No Kali NetHunter files were downloaded. Skipping release upload."
+          exit 1
         fi
-        
-        gh release upload "kali-latest" kali-nethunter-rootfs-*.tar.xz --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
