@@ -15,7 +15,7 @@
 
 # $${\color{magenta}Auto-Install}$$
 ```diff
--; apt update && pkg upgrade -y -o Dpkg::Options::="--force-confnew && pkg install wget -y && clear && wget -qO install.sh https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/install.sh && chmod +x install.sh && bash install.sh && kali
+-; apt update && pkg upgrade -y -o Dpkg::Options::="--force-confnew" && pkg install wget -y && clear && wget -qO install.sh https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/install.sh && chmod +x install.sh && bash install.sh && kali
 ```
 ### $${\color{magenta}Setup-VNC}$$
 > - Setup for Kali Nethunter Full
