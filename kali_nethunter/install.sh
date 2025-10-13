@@ -1,35 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Fix Repo
-cat > "$PREFIX/etc/apt/sources.list" << EOF
-deb https://packages-cf.termux.dev/apt/termux-main stable main
-EOF
-
-# Fix Mirror
-cd "$PREFIX/etc/termux/mirrors"
-rm -f default
-rm -f asia/*
-rm -f chinese_mainland/*
-rm -f europe/*
-rm -f north_america/*
-rm -f oceania/*
-rm -f russia/*
-
-cat > default << EOF
-WEIGHT=0
-MAIN="https://packages-cf.termux.dev/apt/termux-main"
-ROOT="https://packages-cf.termux.dev/apt/termux-root"
-X11="https://packages-cf.termux.dev/apt/termux-x11"
-EOF
-chmod +x default
-
-cp default asia
-cp default chinese_mainland
-cp default europe
-cp default north_america
-cp default oceania
-cp default russia
-
 cd "$HOME"
 
 # Install required packages
