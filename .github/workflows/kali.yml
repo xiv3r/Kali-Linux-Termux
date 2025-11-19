@@ -1,4 +1,4 @@
-name: Updating Kali Linux
+name: Kali Linux
 
 on:
   schedule:
@@ -39,20 +39,21 @@ jobs:
       run: |
         cat > DETAILS.md << 'EOF'
         ## Termux app
-        - **apk**: https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk
-        - **release**: https://github.com/termux/termux-app/releases
+        - **App**: https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_universal.apk
+        - **Release**: https://github.com/termux/termux-app/releases
         
         ## Nethunter vnc
-        - **apk**: https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk
-        - **release**: https://store.nethunter.com/packages/com.offsec.nethunter.kex
+        - **App**: https://store.nethunter.com/repo/com.offsec.nethunter.kex_11525001.apk
+        - **Release**: https://store.nethunter.com/packages/com.offsec.nethunter.kex
         
         ## Architectures
-        - **arm64**: 64-bit ARM devices
-        - **armhf**: 32-bit ARM devices
+        - **Arm64**: 64-bit ARM devices
+        - **Armhf**: 32-bit ARM devices
         
         ## Variants
-        - **minimal**: Minimal installation with essential tools
-        - **nano**: Even more minimal footprint
+        - **Full**: Full installation includes vnc desktop server 
+        - **Minimal**: Minimal installation with essential tools
+        - **Nano**: Even more minimal footprint
         EOF
         
         echo -e "\n## Checksums" >> DETAILS.md
