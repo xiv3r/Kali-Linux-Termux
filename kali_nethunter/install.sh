@@ -196,7 +196,7 @@ EOF
 # Neofetch
 sed -i '/neofetch/d' "$DIR/etc/bash.bashrc"
 cat >> "$DIR/etc/bash.bashrc" << EOF
-neofetch
+fastfetch
 EOF
 
 # Configure sudo.conf
