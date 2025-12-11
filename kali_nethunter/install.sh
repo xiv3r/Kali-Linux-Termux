@@ -193,6 +193,8 @@ EOF
 sed -i '/fastfetch/d' "$DIR/etc/bash.bashrc"
 cat >> "$DIR/etc/bash.bashrc" << EOF
 fastfetch
+sudo apt update
+sudo apt install fastfetch -y
 EOF
 
 # Configure sudo.conf
@@ -217,5 +219,5 @@ cat << EOF
 EOF
 
 bash kali -r
-sudo apt update 
-sudo apt install fastfetch -y
+sed -i '/sudo apt update/d' "/etc/bash.bashrc"
+sed -i '/sudo apt install fastfetch -y/d' "/etc/bash.bashrc"
