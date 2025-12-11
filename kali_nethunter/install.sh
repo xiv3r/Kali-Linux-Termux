@@ -195,6 +195,9 @@ cat >> "$DIR/etc/bash.bashrc" << EOF
 fastfetch
 sudo apt update
 sudo apt install fastfetch -y
+sed -i '/sudo apt update/d' "/etc/bash.bashrc"
+sed -i '/sudo apt install fastfetch -y/d' "/etc/bash.bashrc"
+
 EOF
 
 # Configure sudo.conf
@@ -216,8 +219,7 @@ rm -f install.sh
 cat << EOF
 
 [*] To Login Kali Nethunter Type: $NM
+
 EOF
 
 bash kali -r
-sed -i '/sudo apt update/d' "/etc/bash.bashrc"
-sed -i '/sudo apt install fastfetch -y/d' "/etc/bash.bashrc"
