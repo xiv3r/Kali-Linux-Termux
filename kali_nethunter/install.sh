@@ -7,7 +7,7 @@ pkg install proot bsdtar libxml2 axel fastfetch -y
 clear
 
 # Display system info
-fastfetch --logo kali --logo-type builtin
+fastfetch --logo kali
 
 # Start-up
 sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
