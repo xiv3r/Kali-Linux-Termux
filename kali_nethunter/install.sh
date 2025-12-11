@@ -151,10 +151,6 @@ chmod 755 "$PREFIX/bin/$NM"
 wget -qO "$DIR/bin/vnc" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/vnc"
 chmod 755 "$DIR/bin/vnc"
 
-# Add neofetch
-wget -qO "$DIR/bin/neofetch" "https://raw.githubusercontent.com/xiv3r/Kali-Linux-Termux/refs/heads/main/kali_nethunter/fastfetch"
-chmod 755 "$DIR/bin/fastfetch"
-
 # Add VNC autostart for full installation
 if [ "$wimg" = "full" ]; then
     echo "( kali vnc & )" >> "$PREFIX/etc/bash.bashrc"
@@ -194,7 +190,7 @@ $NM    ALL=(ALL:ALL) ALL
 EOF
 
 # Neofetch
-sed -i '/neofetch/d' "$DIR/etc/bash.bashrc"
+sed -i '/fastfetch/d' "$DIR/etc/bash.bashrc"
 cat >> "$DIR/etc/bash.bashrc" << EOF
 fastfetch
 EOF
@@ -219,3 +215,7 @@ cat << EOF
 
 [*] To Login Kali Nethunter Type: $NM
 EOF
+
+kali -r
+sudo apt update 
+sudo apt install fastfetch -y
