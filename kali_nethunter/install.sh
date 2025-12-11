@@ -216,6 +216,6 @@ cat << EOF
 [*] To Login Kali Nethunter Type: $NM
 EOF
 
-kali -r
+bash kali -r
 sudo apt update 
 sudo apt install fastfetch -y
