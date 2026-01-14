@@ -184,6 +184,11 @@ nameserver 8.8.8.8
 nameserver 1.1.1.1
 EOF
 
+# Fix Repo
+cat > "$DIR/etc/apt/sources.list" << EOF
+deb http://kali.download/kali kali-rolling main contrib non-free non-free-firmware
+EOF
+
 # Fix sudoer file
 cat > "$DIR/etc/sudoers.d/$NM" << EOF
 $NM    ALL=(ALL:ALL) ALL
