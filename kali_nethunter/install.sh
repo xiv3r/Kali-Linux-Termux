@@ -194,7 +194,7 @@ cat > "$DIR/etc/sudoers.d/$NM" << EOF
 $NM    ALL=(ALL:ALL) ALL
 EOF
 
-# Neofetch
+# Fastfetch
 sed -i '/fastfetch/d' "$DIR/etc/bash.bashrc"
 cat >> "$DIR/etc/bash.bashrc" << EOF
 sudo apt update
