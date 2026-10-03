@@ -202,7 +202,7 @@ sudo apt install fastfetch -y
 rm /etc/apt/sources.list.d/*
 sed -i '/sudo apt update/d' "/etc/bash.bashrc"
 sed -i '/sudo apt install fastfetch -y/d' "/etc/bash.bashrc"
-sed -i 'rm /etc/apt/sources.list.d/*/d' "/etc/bash.bashrc"
+sed -i '/rm /etc/apt/sources.list.d/*/d' "/etc/bash.bashrc"
 fastfetch
 EOF
 
