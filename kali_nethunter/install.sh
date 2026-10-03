@@ -163,8 +163,9 @@ cat > "$PREFIX/bin/$NM-uninstall" << EOF
 rm -rf "$HOME/$DIR"
 rm -f "$PREFIX/bin/$NM"
 sed -i '/termux-wake-lock/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/kali/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/clear/d' "$PREFIX/etc/bash.bashrc"
-sed -i '/$NM -r/d' "$PREFIX/etc/bash.bashrc"
+sed -i '/kali -r/d' "$PREFIX/etc/bash.bashrc"
 sed -i '/( kali vnc & )/d' "$PREFIX/etc/bash.bashrc"
 rm -f "$PREFIX/bin/$NM-uninstall"
 EOF
